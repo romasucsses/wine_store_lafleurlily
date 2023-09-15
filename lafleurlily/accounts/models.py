@@ -1,4 +1,5 @@
 from django.db import models
+from orders.models import Checkout
 
 
 class Account(models.Model):
@@ -8,7 +9,7 @@ class Account(models.Model):
     name = models.CharField(max_length=155, null=True)
     last_name = models.CharField(max_length=155, null=True)
     display_name = models.CharField(max_length=255, default=username)
-    orders = models.ManyToOneRel('orders.Checkout', on_delete=models.CASCADE)
+    orders = models.ForeignKey('orders.Checkout', on_delete=models.CASCADE)
 
 
 class ShippingAddress(models.Model):
@@ -23,3 +24,7 @@ class ShippingAddress(models.Model):
     zip_code = models.CharField(max_length=155)
     phone = models.CharField(max_length=255)
     email = models.EmailField()
+
+
+class HistoryOrders(models.Model):
+    order = models.ForeignKey(Checkout, on_delete=models.PROTECT)

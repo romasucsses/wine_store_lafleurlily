@@ -1,0 +1,287 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f2f3fa;
+}
+
+/*editing navigation panel*/
+
+nav .menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+nav li{
+    margin-top: 35px;
+    margin-right: 30px;
+}
+  
+nav a{
+    color: #483e3e;
+    text-decoration: none;
+    font-size: 16px;
+    /* background-color: #FFFFFF; */
+    border-radius: 4px;
+    
+}
+
+nav a:hover {
+    background-color: #483e3e; /* Цвет фона при наведении курсора */
+    color: #FFFFFF;
+}
+
+nav .logo-img{
+    width: auto;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.cart-acc-img{
+    margin-top: 23px;
+    margin-right: 60px;
+}
+
+.cart-acc-img img{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+.horizontal-line-menu{
+    border: none; /* Убираем стандартную рамку */
+    border-top: 0.5px solid #DCD3D2; /* Задаем цвет и толщину линии */
+    margin: 20px 0; /* Добавляем отступы сверху и снизу линии (по желанию) */
+    
+}
+
+
+.product{
+    display: flex;
+    margin-top:50px;
+}
+
+form input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 50px;
+    height: 35px;
+    margin-top:250px;
+    margin-left:-180px;
+}
+.btn1{
+    width: 240px;
+    height: 40px;
+    margin-top:250px;
+    margin-left:5px;
+    background-color:blue;
+    border: 0;
+}
+
+.btn1 a{
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+.prod-img{
+    margin-left:30px;
+    width: 460px;
+    height: 460px;
+}
+
+.situated{
+    margin-left:30px;
+    color:rgba(0, 0, 0, 0.5);
+}
+
+.categ1{
+    margin-top: 60px;
+    margin-left:-240px;
+
+}
+
+.name{
+    margin-top:120px;
+    margin-left:-30px;
+}
+
+.price{
+    margin-top:180px;
+    margin-left:-220px;
+    font-size: x-large;
+}
+
+.shiping{
+    margin-top:190px;
+    margin-left:5px;
+}
+
+.categ2{
+    margin-top: 330px;
+    margin-left:-310px;
+}
+
+.two-blcok{
+    margin-top: 70px;
+}
+
+.two-block p{
+    color:rgb(153, 143, 143);
+    margin-top: 50px;
+    margin-left: 30px;
+    font-size: larger;
+}
+
+.two-block h2{
+    margin-left: 20px;
+    margin-top:90px;
+    font-size: xx-large;
+}
+
+.proucts-shop{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-top: 60px;
+    padding: 15px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.product-card{
+    text-align: left;
+    padding: 8px;
+}
+
+.product-card img{
+    width: 219px;
+    height: 219px;
+    margin: 9px;
+}
+
+.product-category{
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #6f6f6f;
+}
+
+.info-product-shop{
+    margin: 10px 0;
+}
+
+.product-name,
+.product-category,
+.product-price,
+.review {
+    margin: 5px 0;
+}
+
+.info-product-shop h2{
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.product-price{
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.review{
+    display: flex;
+    position: relative;
+    color: #8e7e4d;
+}
+
+.stars-img{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.stars-img img{
+    width: 15px;
+    height: 15px;
+    bottom: 0;
+    padding: 1px;
+    margin: 1px;
+    margin-top: 13px;
+}  
+
+/*editiong footer*/
+.footer{
+    margin-top: 40px;
+    display: flex;
+    background-color:#FFFFFF;
+    height: 260px;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.icons-footer img{
+    width: 18px;
+    height: 18px;
+}
+
+.footer .left-column{
+    margin-top: 3%;
+    margin-left: 2%;
+}
+
+.footer .right-column{
+    margin-top: 3%;
+    margin-right: 6%;
+    width: 35%;
+
+}
+
+.footer .right-column h2{
+    color: #000000;
+    font-size: 1.375rem;
+    font-weight: 400;
+    margin-bottom: 1em;
+    line-height: 1.5;
+    
+}
+
+.footer button{
+    width: 160px;
+    height: 50px;
+    background-color: #0084d6;
+    color: #FFFF;
+    border: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 16px;
+    padding-right: 28px;
+    padding-bottom: 16px;
+    padding-left: 28px
+}
+
+.icons-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+}
+
+
+#subscration{
+    width: 390px;
+    height: 30px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+ 

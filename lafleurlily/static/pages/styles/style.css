@@ -1,0 +1,409 @@
+/* esdintin general body teg */
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f5f7f9;
+}
+
+/*editing navigation panel*/
+
+nav .menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+nav li{
+    margin-top: 35px;
+    margin-right: 30px;
+}
+  
+nav a{
+    color: #483e3e;
+    text-decoration: none;
+    font-size: 16px;
+    /* background-color: #FFFFFF; */
+    border-radius: 4px;
+    
+}
+
+nav a:hover {
+    background-color: #483e3e; /* Цвет фона при наведении курсора */
+    color: #FFFFFF;
+}
+
+nav .logo-img{
+    width: auto;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.cart-acc-img{
+    margin-top: 23px;
+    margin-right: 60px;
+}
+
+.cart-acc-img img{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+/* editing first block div*/
+.first-block{
+    position: relative;
+    height: 470px;
+    background-image: url(../images/first-background-img.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+
+}
+
+.first-block button{
+    margin-top: 35px;
+    font-size:larger;
+    margin-left: 45px;
+}
+
+button a{
+    text-decoration: none;
+}
+
+.block1-btn1{
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    border: 0;
+}
+
+.block1-btn1 a{
+    color: black;
+}
+
+.block1-btn1:hover{
+    background-color: black;
+    border: 0;
+}
+
+.block1-btn1:hover a{
+    color: white;
+}
+
+.block1-btn2{
+    width: 165px;
+    height: 50px;
+    border: 6%;
+    border-color:white;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.block1-btn2 a{
+    color: white;
+}
+
+.block1-btn2:hover{
+    background-color: white;
+    border: 0;
+}
+
+.block1-btn2:hover a{
+    color: black;
+}
+
+.block1-p1{
+    font-size: xxx-large;
+    color: #FFFFFF;
+    margin-top: 50px;
+    margin-left: 5%;
+    border: 10px;
+    border-color: #000000;
+}
+
+
+
+/*Edinting two block*/
+.two-block{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+}
+
+/* deleting the controls line of video*/
+.two-block video::-webkit-media-controls-panel{
+    display: none;  
+}
+
+.two-block video::-webkit-media-controls{
+     display:none; 
+}
+
+.two-block video{
+    margin-top: 30px;
+    margin-right: 5px;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.two-block p{
+    text-align: left;
+    width: 350px;
+    margin-top: 75px;
+    margin-left: 40px;
+    font-style: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    ;
+    font-size: medium;
+    line-height: 32px;
+}
+
+
+/*editing block three*/
+.three-block{
+    display: flex;
+    margin-top: 75px;
+    justify-content: space-between;
+
+}
+
+.three-block img{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    object-fit: cover;
+}
+
+.card-1, 
+.card-2,
+.card-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    padding: 20px;
+    position: relative;
+    height: 480px;
+}
+
+.act-on-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 90px;
+    margin-left: 40px;
+    
+}
+
+
+
+.three-block button{
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    border:0;
+}
+.three-block button a{
+    color:black;
+    font-size: large;
+}
+
+.three-block button:hover{
+    background-color: black;
+}
+
+.three-block button:hover a{
+    color: white;
+}
+
+
+
+.three-block p{
+    font-size: xx-large;
+    width: 240px;
+    color:white;
+    background-color: rgb(181, 170, 170);
+}
+
+
+/*editing home-products*/
+.home-products{
+    text-align: center;
+}
+
+.featured-prod{
+    align-content: center;
+    font-size: 40px;
+    color:#000000;
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-top: 50px;
+    padding: 15px;
+}
+
+.card-product{
+    text-align: left;
+}
+
+.card-product img{
+    width: 280px;
+    height: 280px;
+    margin: 9px;
+}
+
+.product-category{
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #6f6f6f;
+}
+
+.info-product{
+    margin: 10px 0;
+}
+
+.product-name,
+.product-category,
+.product-price,
+.review {
+    margin: 5px 0;
+}
+
+.info-product h2{
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.product-price{
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.review{
+    display: flex;
+    position: relative;
+    color: #8e7e4d;
+}
+
+.stars-img{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.stars-img img{
+    width: 15px;
+    height: 15px;
+    bottom: 0;
+    padding: 1px;
+    margin: 1px;
+    margin-top: 13px;
+}   
+
+
+
+.products-btn{
+    margin-top: 90px;
+    width: 820px;
+    height: 50px;
+    margin-left:20px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 10%;
+    border-color: black;
+}
+
+.products-btn a{
+    color: black;
+    font-size: larger;
+}
+
+
+.products-btn:hover{
+    background-color: black;
+}
+
+.products-btn:hover a{
+    color: white;
+}
+
+
+
+/*editiong footer*/
+.footer{
+    margin-top: 40px;
+    display: flex;
+    background-color:aliceblue;
+    height: 260px;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.icons-footer img{
+    width: 18px;
+    height: 18px;
+}
+
+.footer .left-column{
+    margin-top: 3%;
+    margin-left: 2%;
+}
+
+.footer .right-column{
+    margin-top: 3%;
+    margin-right: 6%;
+    width: 35%;
+
+}
+
+.footer .right-column h2{
+    color: #000000;
+    font-size: 1.375rem;
+    font-weight: 400;
+    margin-bottom: 1em;
+    line-height: 1.5;
+    
+}
+
+.footer button{
+    width: 160px;
+    height: 50px;
+    background-color: #0084d6;
+    color: #FFFF;
+    border: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 16px;
+    padding-right: 28px;
+    padding-bottom: 16px;
+    padding-left: 28px
+}
+
+.icons-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+}
+
+
+#subscration{
+    width: 390px;
+    height: 30px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+

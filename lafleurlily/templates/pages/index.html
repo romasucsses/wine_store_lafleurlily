@@ -1,14 +1,307 @@
-{% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-</head>
-<body>
-    <h2>Hello World</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/style.css" />
+    <!--adding favicon of site-->
+    <link rel="icon" href="../static/images/logo.png" type="image/png" />
+    <title>La Fleur Lily</title>
+  </head>
+  <body>
+    <div class="first-block">
+      <nav>
+        <div class="menu">
+          <ul>
+            <img class="logo-img" src="../static/images/site-img/logo.png"/>
+            <li><a href="file:///D:/programs/site1/index.html">HOME</a></li>
+            <li><a href="file:///D:/programs/site1/shop.html">SHOP</a></li>
+            <li><a href="#">WINE</a></li>
+            <li><a href="#">SPARKLING</a></li>
+            <li><a href="#">MY ACCOUNT</a></li>
+            <li><a href="#">OUR STORY</a></li>
+            <li><a href="#">FIND NEAR ME</a></li>
+            <li><a href="#">CONTACT US</a></li>
+          </ul>
+          <div class="cart-acc-img">
+            <img src="../static/images/site-img/cart_.svg.png"/>
+            <img src="../static/images/site-img/my-account.png"/>
+          </div>
+        </div>
+      </nav>
+
+      <p class="block1-p1">La Fleur Lily - memories of first love.</p>
+
+      <div class="buttons">
+        <button class="block1-btn1">
+          <a href="file:///D:/programs/site1/shop.html" class="block1-a1">SHOP NOW</a>
+        </button>
+        <button class="block1-btn2">
+          <a href="#" class="block1-a2">ABOUT US</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="two-block">
+      <video
+        src="../static/videos/first_video_two-block.mp4"
+        width="580"
+        height="300"
+        autoplay
+        muted
+        loop
+        controls="false"
+      >
+        Your browser does not support the video
+      </video>
+      <p>
+        Welcome to La Fleur Lily, where organic wines are crafted with soul. Our
+        vineyards thrive under the nurturing touch of nature, yielding grapes
+        bursting with vibrant flavors. Experience the essence of our handcrafted
+        wines, made with love and care, and embark on a journey of pure delight
+        for your senses.
+      </p>
+    </div>
+
+    <div class="three-block">
+      <div class="card-1">
+        <img src="../static/images/block3_first_img.jpg" class="block3-first-img" />
+        <div class="act-on-content">
+          <p class="block3-p1">
+            To provide you with the best wine and service is our primary goal.
+          </p>
+          <button class="block3-btn1"><a href="#">OUR WINES</a></button>
+        </div>
+      </div>
+
+      <div class="card-2">
+        <img
+          src="../static/images/block3_second_img.jpg"
+          class="block3-second-img"
+        />
+        <div class="act-on-content">
+          <p class="block3-p2">La Fleur Lily is love in a glass.</p>
+          <button class="block3-btn2"><a href="#">OUR SPARKLING</a></button>
+        </div>
+      </div>
+
+      <div class="card-3">
+        <img src="../static/images/block3_three_img.jpg" class="block3-three-img" />
+        <div class="act-on-content">
+          <p class="block3-p3">La Fleur Lily - wine born with love and passion.</p>
+          <button class="block3-btn3"><a href="#">OUR STORY</a></button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="home-products">
+      <h2 class="featured-prod">Featured Products</h2>
+
+      <div class="products">
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-product">
+          <a href="#">
+            <img src="../static/products-img/4.png" alt="Wait please" />
+          </a>
+          <div class="info-product">
+            <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
+            <p class="product-category">Wine</p>
+            <p class="product-price">$15.00</p>
+            <div class="review">
+              <p> stars</p>
+              <div class="stars-img">
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+                <img src="../static/images/star-photo-review.svg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <button class="products-btn">
+        <a href="file:///D:/programs/site1/shop.html">VIEW ALL PRODUCTS</a>
+      </button>
+    </div>
+
+
+
+    <div class="footer">
+      <div class="left-column">
+        <div class="icons-footer">
+          <a href="https://www.instagram.com/lafleurlilywine/">
+            <img src="../static/images/site-img/icons-footer/instagram-footer.png">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100067500445783">
+            <img src="../static/images/site-img/icons-footer/facebook-footer.svg">
+          </a>
+          <a href="https://www.pinterest.com/lafleurlilywine/">
+            <img src="../static/images/site-img/icons-footer/pinterest-footer.svg">
+          </a>
+        </div>
+        <p>Copyright © 2023 La Fluer Lily. Powered by La Fluer Lily.</p>
+      </div>
+
+      <div class="right-column">
+        <h2>Subscribe</h2>
+        <form>
+          <input type="text" id="subscration" name="subscration" placeholder="Your email adress...">
+          <button type="submit" class="subs-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
 </html>
