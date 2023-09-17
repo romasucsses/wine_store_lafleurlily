@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Near Me</title>
+    <link rel="stylesheet" href="{% static 'pages/styles/find_nearme_style.css' %}"/>
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+
+    <div class="main-block">
+        <div class="content">
+            <h2>Where you can buy our Wine</h2>
+            <form>
+                <label></label>
+                <input type="text" placeholder="Write your addres:">
+                <button class='btn-search' type='submit' name='action' value="search_near_address">Check for results</button>
+                <button class='btn-showall' type="submit" name="action" value="show_all">See All Stores</button>
+            </form>
+            <p>Click on the address</p>
+            <div class="search-results">
+                <a href="#">3607 Broadway</a>
+                <a href="#">2903 Broadway</a>
+                <a href="#">3790 Broadway, NY</a>
+                <a href="#">720 West 181st street</a>
+                <a href="#">1492 St. Nicholas Ave</a>
+                <a href="#">2235 Frederick Douglass Blvd</a>
+                <a href="#">152 Wyckoff Ave, Brooklyn</a>
+                <a href="#">867 W Merrick Rd.Valley Stream</a>
+
+            </div>
+
+            <p>Our All Address</p>
+            <div class="all-address">
+                <a href="#">3607 Broadway</a>
+                <a href="#">2903 Broadway</a>
+                <a href="#">3790 Broadway, NY</a>
+                <a href="#">720 West 181st street</a>
+                <a href="#">1492 St. Nicholas Ave</a>
+                <a href="#">2235 Frederick Douglass Blvd</a>
+                <a href="#">152 Wyckoff Ave, Brooklyn</a>
+                <a href="#">867 W Merrick Rd.Valley Stream</a>
+            </div>
+
+        </div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387194.06241208257!2d-74.30933616806763!3d40.69701926227439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6LCDQodCo0JA!5e0!3m2!1sru!2s!4v1694957299661!5m2!1sru!2s" width="550" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+    </div>
+
+    <div class="footer">
+        <div class="left-column">
+          <div class="icons-footer">
+            <a href="https://www.instagram.com/lafleurlilywine/">
+              <img
+                src="../static/images/site-img/icons-footer/instagram-footer.png"
+              />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100067500445783">
+              <img
+                src="../static/images/site-img/icons-footer/facebook-footer.svg"
+              />
+            </a>
+            <a href="https://www.pinterest.com/lafleurlilywine/">
+              <img
+                src="../static/images/site-img/icons-footer/pinterest-footer.svg"
+              />
+            </a>
+          </div>
+          <p>Copyright © 2023 La Fluer Lily. Powered by La Fluer Lily.</p>
+        </div>
+  
+        <div class="right-column">
+          <h2>Subscribe</h2>
+          <form>
+            <input
+              type="text"
+              id="subscration"
+              name="subscration"
+              placeholder="Your email adress..."
+            />
+            <button type="submit" class="subs-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+    
+</body>
+</html>

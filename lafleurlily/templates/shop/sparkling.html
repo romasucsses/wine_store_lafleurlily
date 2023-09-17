@@ -1,33 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wine category</title>
-    <link rel="stylesheet" href="../static/styles/sparkling-style.css" />
+    <link rel="stylesheet" href="{% static 'shop/styles/sparkling-style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}"/>
   </head>
   <body>
-    <nav>
-      <div class="menu">
-        <ul>
-          <img class="logo-img" src="../static/images/site-img/logo.png" />
-          <li><a href="file:///D:/programs/site1/index.html">HOME</a></li>
-          <li><a href="file:///D:/programs/site1/shop.html">SHOP</a></li>
-          <li><a href="#">WINE</a></li>
-          <li><a href="#">SPARKLING</a></li>
-          <li><a href="#">MY ACCOUNT</a></li>
-          <li><a href="#">OUR STORY</a></li>
-          <li><a href="#">FIND NEAR ME</a></li>
-          <li><a href="#">CONTACT US</a></li>
-        </ul>
-        <div class="cart-acc-img">
-          <img src="../static/images/site-img/cart_.svg.png" />
-          <img src="../static/images/site-img/my-account.png" />
-        </div>
-      </div>
-
-      <hr class="horizontal-line-menu" />
-    </nav>
+    {% include 'base/navigation_menu.html' %}
 
     <div class="main-content">
       <div class="left-block">
@@ -348,40 +331,6 @@
       </div>
     </div>
 
-    <div class="footer">
-      <div class="left-column">
-        <div class="icons-footer">
-          <a href="https://www.instagram.com/lafleurlilywine/">
-            <img
-              src="../static/images/site-img/icons-footer/instagram-footer.png"
-            />
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=100067500445783">
-            <img
-              src="../static/images/site-img/icons-footer/facebook-footer.svg"
-            />
-          </a>
-          <a href="https://www.pinterest.com/lafleurlilywine/">
-            <img
-              src="../static/images/site-img/icons-footer/pinterest-footer.svg"
-            />
-          </a>
-        </div>
-        <p>Copyright © 2023 La Fluer Lily. Powered by La Fluer Lily.</p>
-      </div>
-
-      <div class="right-column">
-        <h2>Subscribe</h2>
-        <form>
-          <input
-            type="text"
-            id="subscration"
-            name="subscration"
-            placeholder="Your email adress..."
-          />
-          <button type="submit" class="subs-btn">Subscribe</button>
-        </form>
-      </div>
-    </div>
+    {% include 'base/footer.html' %}
   </body>
 </html>

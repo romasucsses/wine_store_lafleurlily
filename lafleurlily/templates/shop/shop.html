@@ -1,33 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
-    <link rel='stylesheet' href="../static/styles/shopstyle.css"/>
+    <link rel='stylesheet' href="{% static 'shop/styles/shopstyle.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}"/>
 </head>
 <body>
-    <nav>
-        <div class="menu">
-            <ul>
-              <img class="logo-img" src="../static/images/site-img/logo.png"/>
-              <li><a href="file:///D:/programs/site1/index.html">HOME</a></li>
-              <li><a href="file:///D:/programs/site1/shop.html">SHOP</a></li>
-              <li><a href="#">WINE</a></li>
-              <li><a href="#">SPARKLING</a></li>
-              <li><a href="#">MY ACCOUNT</a></li>
-              <li><a href="#">OUR STORY</a></li>
-              <li><a href="#">FIND NEAR ME</a></li>
-              <li><a href="#">CONTACT US</a></li>
-            </ul>
-            <div class="cart-acc-img">
-                <img src="../static/images/site-img/cart_.svg.png"/>
-                <img src="../static/images/site-img/my-account.png"/>
-            </div>
-        </div>
-
-        <hr class="horizontal-line-menu"/>
-    </nav>
+    {% include 'base/navigation_menu.html' %}
 
       <div class="main-content">
 
@@ -47,98 +30,26 @@
                 <p class="title">Our Best Sellers</p>
 
                 <div class="products-list">
+                {% for best_sellers in '12345' %}
 
                     <div class="card">
-                        <img class="product-img" src="../static/images/products-img/2.png"/>
+                        <img class="product-img" src="{% static 'shop/images/products-img/2.png' %}"/>
                         <div class="info-product-shop">
                             <span class="name-prod">La Fleur Lily Red dry</span>
                             <div class="stars">
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
+                            {% for seller_stars in '12345' %}
+                                <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
+                            {% endfor %}
                             </div>
                             <span class="price">$15.00</span>
                         </div>
                         
                     </div>
                     <hr class="horizontal-line-menu"/>
-
-                    <div class="card">
-                        <img class="product-img" src="../static/images/products-img/2.png"/>
-                        <div class="info-product-shop">
-                            <span class="name-prod">La Fleur Lily Red dry</span>
-                            <div class="stars">
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                            </div>
-                            <span class="price">$15.00</span>
-                        </div>
-                        
-                    </div>
-                    <hr class="horizontal-line-menu"/>
-
-
-                    <div class="card">
-                        <img class="product-img" src="../static/images/products-img/2.png"/>
-                        <div class="info-product">
-                            <span class="name-prod">La Fleur Lily Red dry</span>
-                            <div class="stars">
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                            </div>
-                            <span class="price">$15.00</span>
-                        </div>
-                        
-                    </div>
-                    <hr class="horizontal-line-menu"/>
-
-
-                    <div class="card">
-                        <img class="product-img" src="../static/images/products-img/2.png"/>
-                        <div class="info-product">
-                            <span class="name-prod">La Fleur Lily Red dry</span>
-                            <div class="stars">
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                            </div>
-                            <span class="price">$15.00</span>
-                        </div>
-                        
-                    </div>
-                    <hr class="horizontal-line-menu"/>
-
-                    <div class="card">
-                        <img class="product-img" src="../static/images/products-img/2.png"/>
-                        <div class="info-product">
-                            <span class="name-prod">La Fleur Lily Red dry</span>
-                            <div class="stars">
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                                <img src="../static/images/site-img/star-photo-review.svg"/>
-                            </div>
-                            <span class="price">$15.00</span>
-                        </div>
-                        
-                    </div>
-    
+                    {% endfor %}
 
                 </div>
-
             </div>
-
         </div>
 
         <div class="right-block">
@@ -146,9 +57,9 @@
 
               <p class="results">Showing all 12 results</p>
               
-              <form class="ordering-form" method="get">
+              <form class="ordering-form" method="get" action="{% url 'all_products' %}">
                 <select name='ordering-by' class="sorting">
-                  <option value="menu" selected="selected">Sorting by Default</option>
+                  <option value="default" selected="selected">Sorting by Default</option>
                   <option value="popularity">By popularity</option>
                   <option value="price-up">By Price Low -> High</option>
                   <option value="price-low">By Price High -> Low</option>
@@ -158,10 +69,11 @@
             </div>
 
             <div class="proucts-shop">
+                {% for product in '123456' %}
 
                 <div class="product-card">
                     <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
+                        <img src="{% static 'shop/images/products-img/2.png' %}" alt="Wait please" />
                       </a>
                       <div class="info-product-shop">
                         <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
@@ -170,177 +82,21 @@
                         <div class="review">
                           <p>stars</p>
                           <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
+                          {% for stars in '12345' %}
+                            <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
+                          {% endfor %}
                           </div>
                         </div>
                       </div>
                 </div>
-
-
-                <div class="product-card">
-                    <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
-                      </a>
-                      <div class="info-product-shop">
-                        <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                        <p class="product-category">Wine</p>
-                        <p class="product-price">$15.00</p>
-                        <div class="review">
-                          <p>stars</p>
-                          <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-
-                <div class="product-card">
-                    <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
-                      </a>
-                      <div class="info-product-shop">
-                        <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                        <p class="product-category">Wine</p>
-                        <p class="product-price">$15.00</p>
-                        <div class="review">
-                          <p>stars</p>
-                          <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-
-                <div class="product-card">
-                    <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
-                      </a>
-                      <div class="info-product-shop">
-                        <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                        <p class="product-category">Wine</p>
-                        <p class="product-price">$15.00</p>
-                        <div class="review">
-                          <p>stars</p>
-                          <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-
-                <div class="product-card">
-                    <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
-                      </a>
-                      <div class="info-product-shop">
-                        <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                        <p class="product-category">Wine</p>
-                        <p class="product-price">$15.00</p>
-                        <div class="review">
-                          <p>stars</p>
-                          <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-
-                <div class="product-card">
-                    <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
-                      </a>
-                      <div class="info-product-shop">
-                        <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                        <p class="product-category">Wine</p>
-                        <p class="product-price">$15.00</p>
-                        <div class="review">
-                          <p>stars</p>
-                          <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-                <div class="product-card">
-                    <a href="#">
-                        <img src="../static/images/products-img/2.png" alt="Wait please" />
-                      </a>
-                      <div class="info-product-shop">
-                        <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                        <p class="product-category">Wine</p>
-                        <p class="product-price">$15.00</p>
-                        <div class="review">
-                          <p>stars</p>
-                          <div class="stars-img">
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                            <img src="../static/images/site-img/star-photo-review.svg"/>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
+                {% endfor %}
             </div>
 
         </div>
 
       </div>
 
-      <div class="footer">
-        <div class="left-column">
-          <div class="icons-footer">
-            <a href="https://www.instagram.com/lafleurlilywine/">
-              <img src="../static/images/site-img/icons-footer/instagram-footer.png">
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100067500445783">
-              <img src="../static/images/site-img/icons-footer/facebook-footer.svg">
-            </a>
-            <a href="https://www.pinterest.com/lafleurlilywine/">
-              <img src="../static/images/site-img/icons-footer/pinterest-footer.svg">
-            </a>
-          </div>
-          <p>Copyright © 2023 La Fluer Lily. Powered by La Fluer Lily.</p>
-        </div>
-  
-        <div class="right-column">
-          <h2>Subscribe</h2>
-          <form>
-            <input type="text" id="subscration" name="subscration" placeholder="Your email adress...">
-            <button type="submit" class="subs-btn">Subscribe</button>
-          </form>
-        </div>
-      </div>
+      {% include 'base/footer.html' %}
 
 </body>
 </html>

@@ -1,0 +1,56 @@
+/*editing navigation panel*/
+
+nav .menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
+    margin-top: 35px;
+    margin-right: 30px;
+}
+
+nav a{
+    color: #483e3e;
+    text-decoration: none;
+    font-size: 16px;
+    /* background-color: #FFFFFF; */
+    border-radius: 4px;
+
+}
+
+nav a:hover {
+    background-color: #483e3e; /* Цвет фона при наведении курсора */
+    color: #FFFFFF;
+}
+
+nav .logo-img{
+    width: auto;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.cart-acc-img{
+    margin-top: 23px;
+    margin-right: 60px;
+}
+
+.cart-acc-img img{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+.horizontal-line-menu{
+    border: none; /* Убираем стандартную рамку */
+    border-top: 0.5px solid #DCD3D2; /* Задаем цвет и толщину линии */
+    margin: 20px 0; /* Добавляем отступы сверху и снизу линии (по желанию) */
+
+}

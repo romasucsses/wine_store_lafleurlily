@@ -1,8 +1,9 @@
 from django.urls import path
+from shop.views import *
 
 urlpatterns = [
-    path('store/', all_products, name='all_products'),
-    path('product-category/wines/', wines_category, name='wine_category'),
-    path('product-category/sparkling/', sparkling_category, name='sparkling_category'),
-    path('product/<slug:wine_slug>/', each_wine_slug, name='each_wine')
+    path('', ShopAllProducts.as_view(), name='all_products'),
+    path('category/wines/', WineCategory.as_view(), name='wine_category'),
+    path('category/sparkling/', SparklingCategory.as_view(), name='sparkling_category'),
+    path('<slug:wine_slug>/', Product.as_view(), name='each_wine')
 ]

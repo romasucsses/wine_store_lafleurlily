@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="footer">
+  <div class="left-column">
+    <div class="icons-footer">
+      <a href="https://www.instagram.com/lafleurlilywine/">
+        <img src="{% static 'shop/images/site-img/icons-footer/instagram-footer.png' %}">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100067500445783">
+        <img src="{% static 'shop/images/site-img/icons-footer/facebook-footer.svg' %}">
+      </a>
+      <a href="https://www.pinterest.com/lafleurlilywine/">
+        <img src="{% static 'shop/images/site-img/icons-footer/pinterest-footer.svg' %}">
+      </a>
+    </div>
+    <p>Copyright © 2023 La Fluer Lily. Powered by La Fluer Lily.</p>
+  </div>
+
+  <div class="right-column">
+    <h2>Subscribe</h2>
+    <form method="post">
+      {% csrf_token %}
+      <input type="email" id="subscration" name="email" placeholder="Your email adress...">
+      <button type="submit" class="subs-btn" name="action" value="subscribe" >Subscribe</button>
+    </form>
+  </div>
+</div>
