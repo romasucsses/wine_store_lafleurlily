@@ -20,7 +20,7 @@ class ProductCategory(models.Model):
 class Wine(models.Model):
     name = models.CharField(max_length=355)
     image = models.ImageField(upload_to="img/%Y/%m/%d/")
-    price = models.IntegerField()
+    price = models.FloatField()
     category = models.ForeignKey('shop.ProductCategory', on_delete=models.PROTECT)
     description = models.TextField(null=True)
     time_added = models.DateField(auto_now=True)

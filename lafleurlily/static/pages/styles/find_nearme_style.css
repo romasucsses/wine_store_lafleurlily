@@ -27,19 +27,9 @@ nav li{
     margin-right: 30px;
 }
   
-nav a{
-    color: #483e3e;
-    text-decoration: none;
-    font-size: 16px;
-    /* background-color: #FFFFFF; */
-    border-radius: 4px;
-    
-}
 
-nav a:hover {
-    background-color: #483e3e; /* Цвет фона при наведении курсора */
-    color: #FFFFFF;
-}
+
+
 
 nav .logo-img{
     width: auto;

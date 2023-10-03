@@ -136,6 +136,16 @@ body{
     
 }
 
+.head-rightcolum button{
+    height: 45px;
+    width: 65px;
+    color: #FFFFFF;
+    background-color: #0075be;
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
 .proucts-shop{
     display: flex;
     justify-content: center;

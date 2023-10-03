@@ -29,6 +29,8 @@ nav a{
 nav a:hover {
     background-color: #483e3e; /* Цвет фона при наведении курсора */
     color: #FFFFFF;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 nav .logo-img{

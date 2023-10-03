@@ -9,7 +9,7 @@ class Account(models.Model):
     name = models.CharField(max_length=155, null=True)
     last_name = models.CharField(max_length=155, null=True)
     display_name = models.CharField(max_length=255, default=username)
-    orders = models.ForeignKey('orders.Checkout', on_delete=models.CASCADE)
+    orders = models.ForeignKey(Checkout, on_delete=models.CASCADE)
 
 
 class ShippingAddress(models.Model):

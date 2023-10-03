@@ -35,99 +35,25 @@
           <p class="title">Our Best Sellers</p>
 
           <div class="products-list">
+            {% for best_sellers in '1234' %}
             <div class="card">
               <img
                 class="product-img"
-                src="../static/images/products-img/2.png"
+                src="{% static 'shop/images/products-img/2.png' %}"
               />
               <div class="info-product-shop">
                 <span class="name-prod">La Fleur Lily Red dry</span>
                 <div class="stars">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
+                {% for stars in '12345' %}
+                  <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}" />
+                {% endfor %}
                 </div>
                 <span class="price">$15.00</span>
               </div>
             </div>
             <hr class="horizontal-line-menu" />
+          {% endfor %}
 
-            <div class="card">
-              <img
-                class="product-img"
-                src="../static/images/products-img/2.png"
-              />
-              <div class="info-product-shop">
-                <span class="name-prod">La Fleur Lily Red dry</span>
-                <div class="stars">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-                <span class="price">$15.00</span>
-              </div>
-            </div>
-            <hr class="horizontal-line-menu" />
-
-            <div class="card">
-              <img
-                class="product-img"
-                src="../static/images/products-img/2.png"
-              />
-              <div class="info-product">
-                <span class="name-prod">La Fleur Lily Red dry</span>
-                <div class="stars">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-                <span class="price">$15.00</span>
-              </div>
-            </div>
-            <hr class="horizontal-line-menu" />
-
-            <div class="card">
-              <img
-                class="product-img"
-                src="../static/images/products-img/2.png"
-              />
-              <div class="info-product">
-                <span class="name-prod">La Fleur Lily Red dry</span>
-                <div class="stars">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-                <span class="price">$15.00</span>
-              </div>
-            </div>
-            <hr class="horizontal-line-menu" />
-
-            <div class="card">
-              <img
-                class="product-img"
-                src="../static/images/products-img/2.png"
-              />
-              <div class="info-product">
-                <span class="name-prod">La Fleur Lily Red dry</span>
-                <div class="stars">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-                <span class="price">$15.00</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -161,34 +87,12 @@
         </div>
 
         <div class="proucts-shop">
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="../static/images/products-img/2.png"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
 
+        {% for product in '1234567' %}
           <div class="product-card">
             <a href="#">
               <img
-                src="../static/images/products-img/2.png"
+                src="{% static 'shop/images/products-img/2.png' %}"
                 alt="Wait please"
               />
             </a>
@@ -199,135 +103,16 @@
               <div class="review">
                 <p>stars</p>
                 <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
+                {% for stars in '12345' %}
+                  <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
+                {% endfor %}
                 </div>
               </div>
             </div>
           </div>
+        {% endfor %}
 
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="../static/images/products-img/2.png"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="../static/images/products-img/2.png"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="../static/images/products-img/2.png"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="../static/images/products-img/2.png"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="../static/images/products-img/2.png"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                  <img src="../static/images/site-img/star-photo-review.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

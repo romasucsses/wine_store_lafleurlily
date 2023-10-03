@@ -9,13 +9,17 @@ class ShopAllProducts(SubscribePost, View):
     redirect_page = 'all_products'
 
     def get(self, request):
-        action = request.POST.get('action')
+        action = request.GET.get('action')
+        print('action is = ', action)
+
         if action == 'search-product':
             return self.search(request)
         elif action == 'ordering':
             return self.ordering(request)
+
         else:
-            return render(request, self.template)
+            all_products = Wine.objects.all()
+            return render(request, self.template, {'all_wines': all_products})
 
     def post(self, request):
         action = request.POST.get('action')
@@ -33,11 +37,12 @@ class ShopAllProducts(SubscribePost, View):
         return render(request, self.template, {'wine': products})
 
     def ordering(self, request):
-        ordering_by = request.GET.get('ordering-by', 'menu')
-        paged = request.GET.get('paged', '1')
+        print('function ordering is start')
+        ordering_by = request.GET.get('ordering-by')
+        # paged = request.GET.get('paged', '1')
 
         if ordering_by == 'popularity':
-            products = Wine.objects.order_by('price')
+            products = Wine.objects.order_by('-price')
         elif ordering_by == 'price-up':
             products = Wine.objects.order_by('price')
         elif ordering_by == 'price-low':
@@ -45,9 +50,7 @@ class ShopAllProducts(SubscribePost, View):
         else:
             products = Wine.objects.all()
 
-        context = {'products': products}
-
-        return render(request, self.template, context)
+        return render(request, self.template, {'sort_results': products})
 
 
 class Product(SubscribePost, View):
