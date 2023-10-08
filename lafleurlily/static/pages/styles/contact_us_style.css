@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+/*editing  main block */
+
+.header-block h1{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 90px;
+    color: #333;
+}
+
+.header-block h2{
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+.phone-numbers {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between the cards */
+    flex-wrap: wrap; /* Allows for multiple rows of cards */
+  }
+  
+  .phone-numbers .card {
+    width: 250px;
+    border: 1px solid #000000;
+    border-radius: 9px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    text-align: center;
+  }
+  
+  .phone-numbers .card h3 {
+    font-size: 24px;
+    color: #007bff; /* Blue color for the headings */
+    margin-bottom: 10px;
+  }
+  
+  .phone-numbers .card h4 {
+    font-size: 18px;
+    color: #333; /* Dark gray color for the content */
+  }
+  
+  /* Hover effect for the cards */
+  .phone-numbers .card:hover {
+    transform: scale(1.05); /* Enlarge the card on hover */
+    transition: transform 0.3s ease;
+  }
+  
+
+/* Style for the contact container */
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f2f3fa;
+  }
+  
+  /* Style for the left block */
+  .left-block {
+    flex: 1;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .left-block h6 {
+    font-size: 18px;
+    color: #0084d6;
+  }
+  
+  .left-block h2 {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+  
+  .left-block p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Style for the right block */
+  .right-block {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .right-block form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .right-block input,
+  .right-block button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .right-block input {
+    background-color: #f2f3fa;
+  }
+
+#msg-input{
+    height: 80px;
+}
+  
+  .right-block button {
+    background-color: #0084d6;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .right-block button:hover {
+    background-color: #f2f3fa;
+    color: #0084d6;
+  }
+  
+
+

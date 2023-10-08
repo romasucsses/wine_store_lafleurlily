@@ -16,8 +16,8 @@
 
         <div class="left-block">
             <form class="search-prod-form">
-                <input type="text" id="search-prod" name="search-prod" placeholder="Search products..">
-                <button class="btn-search" type="submit">></button>
+                <input type="text" id="search-prod" name="query" placeholder="Search products..">
+                <button class="btn-search" type="submit" name="action" value="search-product">></button>
             </form>
 
             <div class="categories">
@@ -30,23 +30,25 @@
                 <p class="title">Our Best Sellers</p>
 
                 <div class="products-list">
-                {% for best_sellers in '12345' %}
+                {% for best_seller in best_sellers %}
 
-                    <div class="card">
-                        <img class="product-img" src="{% static 'shop/images/products-img/2.png' %}"/>
-                        <div class="info-product-shop">
-                            <span class="name-prod">La Fleur Lily Red dry</span>
-                            <div class="stars">
-                            {% for seller_stars in '12345' %}
-                                <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
-                            {% endfor %}
+                    <a href="{% url 'each_wine' wine_slug=best_seller.slug %}">
+                        <div class="card">
+                            <img class="product-img" src="{{ best_seller.image.url }}"/>
+                            <div class="info-product-shop">
+                                <span class="name-prod">{{ best_seller.name }}</span>
+                                <div class="stars">
+                                {% for seller_stars in '12345' %}
+                                    <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
+                                {% endfor %}
+                                </div>
+                                <span class="price">${{ best_seller.price }}.00</span>
                             </div>
-                            <span class="price">$15.00</span>
+
                         </div>
-                        
-                    </div>
+                    </a>
                     <hr class="horizontal-line-menu"/>
-                    {% endfor %}
+                {% endfor %}
 
                 </div>
             </div>
@@ -69,34 +71,9 @@
             </div>
 
             <div class="proucts-shop">
-            {% if sort_results %}
-                {% for product in sort_results %}
-                    <div class="product-card">
-                        <a href="{{ product.slug }}">
-                            <img src="{{ product.image.url }}" alt="Wait please"/>
-                          </a>
-                          <div class="info-product-shop">
-                            <h2 class="product-name">{{ product.name }} </h2>
-                            <p class="product-category">{{ product.category }}</p>
-                            <p class="product-price">${{ product.price }}.00</p>
-                            <div class="review">
-                              <p>stars</p>
-                              <div class="stars-img">
-                              {% for stars in '12345' %}
-                                <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
-                              {% endfor %}
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                {% endfor %}
-
-            {% else %}
-
-                {% for product in all_wines %}
-
+            {% for product in all_wines %}
                 <div class="product-card">
-                    <a href="{{ product.slug }}">
+                    <a href="{% url 'each_wine' wine_slug=product.slug %}">
                         <img src="{{ product.image.url }}" alt="Wait please"/>
                       </a>
                       <div class="info-product-shop">
@@ -113,9 +90,8 @@
                         </div>
                       </div>
                 </div>
-                {% endfor %}
+            {% endfor %}
 
-            {% endif %}
             </div>
 
         </div>

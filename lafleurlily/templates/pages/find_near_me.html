@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Near Me</title>
-    <link rel="stylesheet" href="{% static 'pages/styles/find_nearme_style.css' %}"/>
-    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'pages/styles/find_nearme_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}">
 </head>
 <body>
     {% include 'base/navigation_menu.html' %}
@@ -15,34 +16,24 @@
         <div class="content">
             <h2>Where you can buy our Wine</h2>
             <form>
-                <label></label>
-                <input type="text" placeholder="Write your addres:">
-                <button class='btn-search' type='submit' name='action' value="search_near_address">Check for results</button>
+                <input type="text" placeholder="Write your addres:" name="query">
+                <button class='btn-search' type='submit' name='action' value="search_stores">Check for results</button>
                 <button class='btn-showall' type="submit" name="action" value="show_all">See All Stores</button>
             </form>
-            <p>Click on the address</p>
-            <div class="search-results">
-                <a href="#">3607 Broadway</a>
-                <a href="#">2903 Broadway</a>
-                <a href="#">3790 Broadway, NY</a>
-                <a href="#">720 West 181st street</a>
-                <a href="#">1492 St. Nicholas Ave</a>
-                <a href="#">2235 Frederick Douglass Blvd</a>
-                <a href="#">152 Wyckoff Ave, Brooklyn</a>
-                <a href="#">867 W Merrick Rd.Valley Stream</a>
-
-            </div>
+            {% if search_results %}
+                <p>Results: click on the address</p>
+                <div class="search-results">
+                {% for store in search_results %}
+                    <a href="{{store.link_on_googlemaps}}" target="_blank">{{store.address}}</a>
+                {% endfor %}
+                </div>
+            {% endif %}
 
             <p>Our All Address</p>
             <div class="all-address">
-                <a href="#">3607 Broadway</a>
-                <a href="#">2903 Broadway</a>
-                <a href="#">3790 Broadway, NY</a>
-                <a href="#">720 West 181st street</a>
-                <a href="#">1492 St. Nicholas Ave</a>
-                <a href="#">2235 Frederick Douglass Blvd</a>
-                <a href="#">152 Wyckoff Ave, Brooklyn</a>
-                <a href="#">867 W Merrick Rd.Valley Stream</a>
+            {% for store in all_stores%}
+                <a href="{{store.link_on_googlemaps}}" target="_blank">{{store.address}}</a>
+            {% endfor %}
             </div>
 
         </div>
@@ -53,41 +44,7 @@
 
     </div>
 
-    <div class="footer">
-        <div class="left-column">
-          <div class="icons-footer">
-            <a href="https://www.instagram.com/lafleurlilywine/">
-              <img
-                src="../static/images/site-img/icons-footer/instagram-footer.png"
-              />
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100067500445783">
-              <img
-                src="../static/images/site-img/icons-footer/facebook-footer.svg"
-              />
-            </a>
-            <a href="https://www.pinterest.com/lafleurlilywine/">
-              <img
-                src="../static/images/site-img/icons-footer/pinterest-footer.svg"
-              />
-            </a>
-          </div>
-          <p>Copyright © 2023 La Fluer Lily. Powered by La Fluer Lily.</p>
-        </div>
-  
-        <div class="right-column">
-          <h2>Subscribe</h2>
-          <form>
-            <input
-              type="text"
-              id="subscration"
-              name="subscration"
-              placeholder="Your email adress..."
-            />
-            <button type="submit" class="subs-btn">Subscribe</button>
-          </form>
-        </div>
-      </div>
+    {% include 'base/footer.html' %}
 
     
 </body>

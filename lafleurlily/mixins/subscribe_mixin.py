@@ -6,6 +6,11 @@ from pages.forms import SubscriptionForm
 class SubscribePost:
     redirect_page = None
 
+    def post(self, request):
+        action = request.POST.get('action')
+        if action == "subscribe":
+            return self.subscription(request)
+
     def subscription(self, request):
         form = SubscriptionForm(request.POST)
 

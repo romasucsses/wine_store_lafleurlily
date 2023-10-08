@@ -50,9 +50,3 @@ nav .logo-img{
     padding: 10px;
 }
 
-.horizontal-line-menu{
-    border: none; /* Убираем стандартную рамку */
-    border-top: 0.5px solid #DCD3D2; /* Задаем цвет и толщину линии */
-    margin: 20px 0; /* Добавляем отступы сверху и снизу линии (по желанию) */
-
-}

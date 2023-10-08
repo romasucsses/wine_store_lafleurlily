@@ -7,10 +7,10 @@
             <li><a href="{% url 'all_products' %}">SHOP</a></li>
             <li><a href="{% url 'wine_category' %}">WINE</a></li>
             <li><a href="{% url 'sparkling_category' %}">SPARKLING</a></li>
-            <li><a href="#">MY ACCOUNT</a></li>
-            <li><a href="#">OUR STORY</a></li>
+            <li><a href="{% url 'my_account' %}">MY ACCOUNT</a></li>
+            <li><a href="{% url 'about_us' %}">OUR STORY</a></li>
             <li><a href="{% url 'find_near_me' %}">FIND NEAR ME</a></li>
-            <li><a href="#">CONTACT US</a></li>
+            <li><a href="{% url 'contact_us' %}">CONTACT US</a></li>
         </ul>
         <div class="cart-acc-img">
             <img src="{% static 'shop/images/site-img/cart_.svg.png' %}"/>
@@ -18,5 +18,4 @@
         </div>
     </div>
 
-    <hr class="horizontal-line-menu"/>
 </nav>

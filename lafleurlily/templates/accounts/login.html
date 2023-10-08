@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/styles/login_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}">
+    <title>login</title>
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+
+      <div class="login-form">
+        <h1>Login</h1>
+        <form method="post">
+            <div class="group">
+                <label>Username</label>
+                <input type="text" name="username">
+            </div>
+            <div class="group">
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+            <div class="remember-me">
+                <p>Remember Me</p>
+                <input type="checkbox" name="remember-me">
+            </div>
+
+            <button type="submit">Login</button>
+            <a class="create-account" href="#">Create account</a>
+        </form>
+
+      </div>
+
+
+</body>
+</html>

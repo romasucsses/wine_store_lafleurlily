@@ -4,53 +4,74 @@ from shop.models import *
 from mixins.subscribe_mixin import SubscribePost
 
 
-class ShopAllProducts(SubscribePost, View):
-    template = 'shop/shop.html'
-    redirect_page = 'all_products'
+class BaseFunctions(SubscribePost):
+    filter_category = None
+
+    best_sellers_prod = Wine.objects.order_by('-price')[:4]
+    context = {'best_sellers': best_sellers_prod}
 
     def get(self, request):
+
         action = request.GET.get('action')
-        print('action is = ', action)
 
         if action == 'search-product':
-            return self.search(request)
+            return self.search_product(request)
         elif action == 'ordering':
             return self.ordering(request)
 
         else:
-            all_products = Wine.objects.all()
-            return render(request, self.template, {'all_wines': all_products})
+            if self.filter_category:
+                all_products = Wine.objects.filter(category=self.filter_category)
+            else:
+                all_products = Wine.objects.all()
+
+            self.context.update({'all_wines': all_products})
+            return render(request=request, template_name=self.template, context=self.context)
 
     def post(self, request):
         action = request.POST.get('action')
         if action == "subscribe":
             return self.subscription(request)
 
-    def search(self, request):
+    def search_product(self, request):
         query = request.GET.get('query')
-        if query:
-            products = Wine.objects.filter(name__icontains=query)
+        if query and query is not None:
+            if self.filter_category:
+                products = Wine.objects.filter(name__icontains=query, category=self.filter_category)
+            else:
+                products = Wine.objects.filter(name__icontains=query)
 
         else:
-            products = Wine.objects.all()
+            if self.filter_category:
+                products = Wine.objects.filter(category=self.filter_category)
+            else:
+                products = Wine.objects.all()
 
-        return render(request, self.template, {'wine': products})
+        self.context.update({'all_wines': products})
+        return render(request, self.template, self.context)
 
     def ordering(self, request):
-        print('function ordering is start')
         ordering_by = request.GET.get('ordering-by')
-        # paged = request.GET.get('paged', '1')
-
-        if ordering_by == 'popularity':
-            products = Wine.objects.order_by('-price')
-        elif ordering_by == 'price-up':
-            products = Wine.objects.order_by('price')
-        elif ordering_by == 'price-low':
-            products = Wine.objects.order_by('-price')
+        if self.filter_category:
+            products = Wine.objects.filter(category=self.filter_category)
         else:
             products = Wine.objects.all()
 
-        return render(request, self.template, {'sort_results': products})
+        if ordering_by == 'popularity':
+            products = products.order_by('-price')
+        elif ordering_by == 'price-up':
+            products = products.order_by('price')
+        elif ordering_by == 'price-low':
+            products = products.order_by('-price')
+
+        self.context.update({'all_wines': products})
+
+        return render(request, self.template, self.context)
+
+
+class ShopAllProducts(BaseFunctions, View):
+    template = 'shop/shop.html'
+    redirect_page = 'all_products'
 
 
 class Product(SubscribePost, View):
@@ -66,20 +87,14 @@ class Product(SubscribePost, View):
         pass
 
 
-class WineCategory(SubscribePost, View):
+class WineCategory(BaseFunctions, View):
     template = 'shop/wine.html'
-
-    def get(self, request):
-        return render(request, self.template)
-
-    def post(self, request):
-        pass
+    filter_category = 1
 
 
-class SparklingCategory(SubscribePost, View):
+class SparklingCategory(BaseFunctions, View):
     template = 'shop/sparkling.html'
+    filter_category = 2
 
-    def get(self, request):
-        return render(request, self.template)
 
 

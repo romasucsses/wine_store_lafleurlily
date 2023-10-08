@@ -3,8 +3,10 @@ body{
     padding: 0;
     background-color: #f5f7f9;
 }
-
-
+a{
+    text-decoration: none;
+    color: #666;
+}
 
 
 /* editing main-content-block */
@@ -137,8 +139,8 @@ body{
 }
 
 .head-rightcolum button{
-    height: 45px;
-    width: 65px;
+    height: 35px;
+    width: 55px;
     color: #FFFFFF;
     background-color: #0075be;
     border: none;

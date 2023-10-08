@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'pages/styles/contact_us_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'pages/fonts/font_introduce.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}">
+
+    <title>Contact Us</title>
+  </head>
+  <body>
+    {% include 'base/navigation_menu.html' %}
+
+    <div class="header-block">
+      <h1>Contact Us</h1>
+      
+    </div>
+
+    <div class="phone-numbers">
+        <div class="card">
+          <h3>Contact Us</h3>
+          <h4>1(718) 809-9182</h4>
+        </div>
+
+        <div class="card">
+          <h3>Complaints</h3>
+          <h4>1(929)355-4426</h4>
+        </div>
+
+        <div class="card">
+          <h3>Founder</h3>
+          <h4>lvc.incorp@gmail.com</h4>
+        </div>
+
+        <div class="card">
+          <h3>Marketing</h3>
+          <h4>1(212)537-6979</h4>
+        </div>
+    </div>
+
+    <div class="contact">
+      
+      <div class="left-block">
+        <h2>We're here to help</h2>
+        <h6>Don't be a stranger!</h6>
+        <h2>You tell us. We listen.</h2>
+        <p>
+          Welcome to our Contact Us page! We value your feedback, inquiries, and
+          suggestions, and we’re here to provide you with the support you need.
+          Whether you have a question about our products or services, need
+          assistance with an order, or simply want to share your thoughts, this
+          is the place to connect with us.
+        </p>
+      </div>
+
+      <div class="right-block">
+        <form>
+            <input placeholder="NAME">
+            <input placeholder="SUBJECT">
+            <input  placeholder="EMAIL">
+            <input id='msg-input' placeholder="MESSAGE">
+            <button>SEND MESSAGE</button>
+        </form>
+      </div>
+
+    </div>
+
+
+    {% include 'base/footer.html' %}
+
+  </body>
+</html>

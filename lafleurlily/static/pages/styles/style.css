@@ -203,13 +203,14 @@ button a{
     padding: 15px;
 }
 
-.card-product{
+.product-card{
     text-align: left;
+    padding: 8px;
 }
 
-.card-product img{
-    width: 280px;
-    height: 280px;
+.product-card img{
+    width: 219px;
+    height: 219px;
     margin: 9px;
 }
 
@@ -219,7 +220,7 @@ button a{
     color: #6f6f6f;
 }
 
-.info-product{
+.info-product-shop{
     margin: 10px 0;
 }
 
@@ -230,7 +231,7 @@ button a{
     margin: 5px 0;
 }
 
-.info-product h2{
+.info-product-shop h2{
     font-size: 16px;
     font-weight: 550;
 }
@@ -249,7 +250,7 @@ button a{
 .stars-img{
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 .stars-img img{
@@ -259,8 +260,7 @@ button a{
     padding: 1px;
     margin: 1px;
     margin-top: 13px;
-}   
-
+}
 
 
 .products-btn{

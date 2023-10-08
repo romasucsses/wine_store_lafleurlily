@@ -15,48 +15,44 @@
 
     <div class="main-content">
       <div class="left-block">
-        <form class="search-prod-form">
-          <input
-            type="text"
-            id="search-prod"
-            name="search-prod"
-            placeholder="Search products.."
-          />
-          <button class="btn-search" type="submit">></button>
-        </form>
+            <form class="search-prod-form">
+                <input type="text" id="search-prod" name="query" placeholder="Search products..">
+                <button class="btn-search" type="submit" name="action" value="search-product">></button>
+            </form>
 
-        <div class="categories">
-          <p class="title">Categories</p>
-          <p class="sparkling-cat">Sparkling (4)</p>
-          <p class="wine-cat">Wine (8)</p>
-        </div>
-
-        <div class="best-sellers">
-          <p class="title">Our Best Sellers</p>
-
-          <div class="products-list">
-            {% for best_sellers in '1234' %}
-            <div class="card">
-              <img
-                class="product-img"
-                src="{% static 'shop/images/products-img/2.png' %}"
-              />
-              <div class="info-product-shop">
-                <span class="name-prod">La Fleur Lily Red dry</span>
-                <div class="stars">
-                {% for stars in '12345' %}
-                  <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}" />
-                {% endfor %}
-                </div>
-                <span class="price">$15.00</span>
-              </div>
+            <div class="categories">
+                <p class="title">Categories</p>
+                <p class="sparkling-cat">Sparkling  (4)</p>
+                <p class="wine-cat">Wine    (8)</p>
             </div>
-            <hr class="horizontal-line-menu" />
-          {% endfor %}
 
-          </div>
+            <div class="best-sellers">
+                <p class="title">Our Best Sellers</p>
+
+                <div class="products-list">
+                {% for best_seller in best_sellers %}
+
+                    <a href="{% url 'each_wine' wine_slug=best_seller.slug %}">
+                        <div class="card">
+                            <img class="product-img" src="{{ best_seller.image.url }}"/>
+                            <div class="info-product-shop">
+                                <span class="name-prod">{{ best_seller.name }}</span>
+                                <div class="stars">
+                                {% for seller_stars in '12345' %}
+                                    <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
+                                {% endfor %}
+                                </div>
+                                <span class="price">${{ best_seller.price }}.00</span>
+                            </div>
+
+                        </div>
+                    </a>
+                    <hr class="horizontal-line-menu"/>
+                {% endfor %}
+
+                </div>
+            </div>
         </div>
-      </div>
 
       <div class="right-block">
         <div class="head-category">
@@ -71,49 +67,43 @@
         </div>
 
         <div class="head-rightcolum">
-          <p class="results">Showing all 12 results</p>
 
-          <form class="ordering-form" method="get">
-            <select name="ordering-by" class="sorting">
-              <option value="menu" selected="selected">
-                Sorting by Default
-              </option>
-              <option value="popularity">By popularity</option>
-              <option value="price-up">By Price Low -> High</option>
-              <option value="price-low">By Price High -> Low</option>
-            </select>
-            <input type="hidden" name="paged" value="1" />
-          </form>
-        </div>
+              <p class="results">Showing all 12 results</p>
 
-        <div class="proucts-shop">
-
-        {% for product in '1234567' %}
-          <div class="product-card">
-            <a href="#">
-              <img
-                src="{% static 'shop/images/products-img/2.png' %}"
-                alt="Wait please"
-              />
-            </a>
-            <div class="info-product-shop">
-              <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-              <p class="product-category">Wine</p>
-              <p class="product-price">$15.00</p>
-              <div class="review">
-                <p>stars</p>
-                <div class="stars-img">
-                {% for stars in '12345' %}
-                  <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
-                {% endfor %}
-                </div>
-              </div>
+              <form class="ordering-form" method="get" action="{% url 'wine_category' %}">
+                <select name="ordering-by" class="sorting">
+                  <option value="default" selected="selected">Sorting by Default</option>
+                  <option value="popularity">By popularity</option>
+                  <option value="price-up">By Price Low -> High</option>
+                  <option value="price-low">By Price High -> Low</option>
+                </select>
+                <button type="submit" name="action" value="ordering">Sort</button>
+              </form>
             </div>
-          </div>
-        {% endfor %}
 
+            <div class="proucts-shop">
+            {% for product in all_wines %}
+                <div class="product-card">
+                    <a href="{% url 'each_wine' wine_slug=product.slug %}">
+                        <img src="{{ product.image.url }}" alt="Wait please"/>
+                      </a>
+                      <div class="info-product-shop">
+                        <h2 class="product-name">{{ product.name }} </h2>
+                        <p class="product-category">{{ product.category }}</p>
+                        <p class="product-price">${{ product.price }}.00</p>
+                        <div class="review">
+                          <p>stars</p>
+                          <div class="stars-img">
+                          {% for stars in '12345' %}
+                            <img src="{% static 'shop/images/site-img/star-photo-review.svg' %}"/>
+                          {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            {% endfor %}
 
-        </div>
+            </div>
       </div>
     </div>
 

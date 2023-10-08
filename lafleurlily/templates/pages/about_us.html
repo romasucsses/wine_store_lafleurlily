@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel="stylesheet" href="{% static 'pages/styles/about_us_style.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/fonts/font_introduce.css' %}">
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}">
+  </head>
+  <body>
+
+    {% include 'base/navigation_menu.html' %}
+
+    <div class="main-block">
+      <h4 class="few-words">A Few Words About</h4>
+      <div class="content">
+        <div class="left-block">
+          <h2>Who We Are</h2>
+          <p>
+            La Fleur Lily is a wine brand created by Victor and Lily, a young
+            family who immigrated to the United States from Europe in search of
+            a better life. Upon arriving in New York, Lily began searching for
+            her favorite semi-sweet wine that would suit her taste, but Victor,
+            who knew a lot about wines thanks to his family of winemakers,
+            decided to find a true, quality wine with no additives for her. In
+            search of the perfect wine for Lily, Victor traveled the world and
+            finally, in 2004, he met a young man who inherited winemaking from
+            his parents. This young man was a talented winemaker who created a
+            unique wine that matched Lily's character, romantic and
+            free-spirited. Victor asked him to taste the wine and realized that
+            this was what he was looking for. They named the wine La Fleur Lily
+            in honor of Lily and began working together to create more
+            high-quality wines. Since then, La Fleur Lily has a portfolio of 12
+            wines that sell very well. In 2023, La Fleur Lily received an
+            organic certification in France, which confirms their constant
+            pursuit of high quality and care for the environment. Thanks to the
+            talent and efforts of Victor and the young winemaker, La Fleur Lily
+            has become not only Lily's favorite wine but also one of the most
+            popular wine brands in the market.
+          </p>
+        </div>
+
+        <img src="{% static 'pages/images/site-img/right-block.jpg' %}" />
+      </div>
+    </div>
+
+    <div class="our-team-block">
+      <h2 class="header-team">Our Team</h2>
+      <p class="title-team">
+        At La Fleur LIly, we believe in the power of collaboration, innovation,
+        and a shared vision. Our diverse and talented team is the driving force
+        behind our success, working together to create exceptional solutions and
+        deliver outstanding results. Get to know the extraordinary individuals
+        who make up our team and discover the passion, expertise, and dedication
+        that sets us apart.
+      </p>
+      <div class="people">
+
+        <div class="card">
+          <img src="{% static 'pages/images/team-photos/1.png' %}">
+          <h4 class="name">Victor Costin</h4>
+          <p class="postion">CEO - Founder</p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'pages/images/team-photos/2.png' %}">
+          <h4 class="name">Lily Costin</h4>
+          <p class="postion">CFO</p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'pages/images/team-photos/3.png' %}">
+          <h4 class="name">Rachel Zain</h4>
+          <p class="postion">Marketing Head</p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'pages/images/team-photos/4.png' %}">
+          <h4 class="name">Roma Costin</h4>
+          <p class="postion">Web Devoloper</p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'pages/images/team-photos/5.png' %}">
+          <h4 class="name">Katrina Bennett</h4>
+          <p class="postion">Katrina Bennett</p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'pages/images/team-photos/6.png' %}">
+          <h4 class="name">Eugen Pantus</h4>
+          <p class="postion">Brand Manger</p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="follow-us-block">
+      <div class="center-links">
+        <h2>Follow Us</h2>
+        <div class="social-media">
+          <a href="https://www.facebook.com/profile.php?id=100067500445783">
+            <img src="{% static 'pages/images/site-img/icons-footer/facebook-footer.svg' %}" >
+          </a>
+
+          <a href="https://www.instagram.com/lafleurlilywine/">
+            <img src="{% static 'pages/images/site-img/icons-footer/instagram-footer.png' %}" >
+          </a>
+
+          <a href="https://www.pinterest.com/lafleurlilywine/">
+            <img src="{% static 'pages/images/site-img/icons-footer/pinterest-footer.svg' %}" >
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  {% include 'base/footer.html' %}
+
+  </body>
+</html>
