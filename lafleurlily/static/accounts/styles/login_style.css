@@ -46,7 +46,7 @@ a{
     margin-bottom: 5px;
 }
 
-.group input[type="text"],
+.group input[type="email"],
 .group input[type="password"] {
     width: 90%;
     padding: 10px;

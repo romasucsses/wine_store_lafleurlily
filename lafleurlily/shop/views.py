@@ -28,11 +28,6 @@ class BaseFunctions(SubscribePost):
             self.context.update({'all_wines': all_products})
             return render(request=request, template_name=self.template, context=self.context)
 
-    def post(self, request):
-        action = request.POST.get('action')
-        if action == "subscribe":
-            return self.subscription(request)
-
     def search_product(self, request):
         query = request.GET.get('query')
         if query and query is not None:

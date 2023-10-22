@@ -25,7 +25,7 @@ class Wine(models.Model):
     description = models.TextField(null=True)
     time_added = models.DateField(auto_now=True)
     quanty = models.IntegerField()
-    slug = models.SlugField(max_length=455, db_index=True, unique=True, verbose_name='URL')
+    slug = models.SlugField(max_length=255, db_index=True, unique=True, verbose_name='URL')
 
     def save(self, *args, **kwargs):
         if not self.slug:

@@ -13,8 +13,8 @@
             <li><a href="{% url 'contact_us' %}">CONTACT US</a></li>
         </ul>
         <div class="cart-acc-img">
-            <img src="{% static 'shop/images/site-img/cart_.svg.png' %}"/>
-            <img src="{% static 'shop/images/site-img/my-account.png' %}"/>
+            <a href="#"><img src="{% static 'shop/images/site-img/cart_.svg.png' %}"/></a>
+            <a href="{% url 'my_account' %}"><img src="{% static 'shop/images/site-img/my-account.png' %}"/></a>
         </div>
     </div>
 

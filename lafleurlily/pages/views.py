@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views import View
 from shop.models import *
 from pages.models import *
 
 from mixins.subscribe_mixin import SubscribePost
+
 
 
 class HomePage(SubscribePost, View):

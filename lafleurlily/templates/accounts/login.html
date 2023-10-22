@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'accounts/styles/login_style.css' %}">
     <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
-    <link rel="stylesheet" href="{% static 'base/footer_style.css' %}">
     <title>login</title>
 </head>
 <body>
     {% include 'base/navigation_menu.html' %}
 
       <div class="login-form">
+      {% if msg_superuser %}
+          <h1>You are login with stuff account please go to <a href="/admin" target="_blank">admin page</a></h1>
+      {% endif %}
         <h1>Login</h1>
-        <form method="post">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
             <div class="group">
                 <label>Username</label>
-                <input type="text" name="username">
+                <input type="email" id="id_username" name="username">
             </div>
             <div class="group">
                 <label>Password</label>
-                <input type="password" name="password">
+                <input type="password" id="id_password" name="password">
+
             </div>
             <div class="remember-me">
                 <p>Remember Me</p>
@@ -29,7 +33,7 @@
             </div>
 
             <button type="submit">Login</button>
-            <a class="create-account" href="#">Create account</a>
+            <a class="create-account" href="{% url 'sing_up' %}">Create account</a>
         </form>
 
       </div>
