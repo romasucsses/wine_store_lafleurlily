@@ -1,21 +1,23 @@
 {% load static %}
-<nav>
-    <div class="menu">
-        <ul>
-            <img class="logo-img" src="{% static 'shop/images/site-img/logo.png' %}"/>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            <li><a href="{% url 'all_products' %}">SHOP</a></li>
-            <li><a href="{% url 'wine_category' %}">WINE</a></li>
-            <li><a href="{% url 'sparkling_category' %}">SPARKLING</a></li>
-            <li><a href="{% url 'my_account' %}">MY ACCOUNT</a></li>
-            <li><a href="{% url 'about_us' %}">OUR STORY</a></li>
-            <li><a href="{% url 'find_near_me' %}">FIND NEAR ME</a></li>
-            <li><a href="{% url 'contact_us' %}">CONTACT US</a></li>
-        </ul>
-        <div class="cart-acc-img">
-            <a href="#"><img src="{% static 'shop/images/site-img/cart_.svg.png' %}"/></a>
-            <a href="{% url 'my_account' %}"><img src="{% static 'shop/images/site-img/my-account.png' %}"/></a>
+<div class="navigation-menu">
+    <nav>
+        <div class="menu">
+            <ul>
+                <img class="logo-img" src="{% static 'shop/images/site-img/logo.png' %}"/>
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'all_products' %}">SHOP</a></li>
+                <li><a href="{% url 'wine_category' %}">WINE</a></li>
+                <li><a href="{% url 'sparkling_category' %}">SPARKLING</a></li>
+                <li><a href="{% url 'my_account' %}">MY ACCOUNT</a></li>
+                <li><a href="{% url 'about_us' %}">OUR STORY</a></li>
+                <li><a href="{% url 'find_near_me' %}">FIND NEAR ME</a></li>
+                <li><a href="{% url 'contact_us' %}">CONTACT US</a></li>
+            </ul>
+            <div class="cart-acc-img">
+                <a href="{% url 'cart' %}"><img src="{% static 'shop/images/site-img/cart_.svg.png' %}"/></a>
+                <a href="{% url 'my_account' %}"><img src="{% static 'shop/images/site-img/my-account.png' %}"/></a>
+            </div>
         </div>
-    </div>
 
-</nav>
+    </nav>
+</div>

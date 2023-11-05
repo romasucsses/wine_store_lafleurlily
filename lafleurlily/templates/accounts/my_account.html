@@ -1,0 +1,59 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="{% static 'accounts/styles/my_account_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+
+</head>
+<body>
+  {% include 'base/navigation_menu.html' %}
+
+  <h2 class="greetings">Hey {{ user.name }}, we really happy to see you again on our store</h2>
+
+  <div class="main-block">
+        
+    <div class="left-menu">
+      <nav>
+        <ul>
+          <li><a href="{% url 'my_account' %}">Account details</a></li>
+          <li><a href="{% url 'account_orders' %}">My Orders</a></li>
+          <li><a href="{% url 'account_address' %}">My Addresses</a></li>
+          <li><a href="{% url 'logout' %}">LogOut</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="right-info">
+        <p>Editing Your Account Information</p>
+        <form method="post">
+            {% csrf_token %}
+          <div class="fields">
+            <div class="data">
+                <label>username</label>
+                <input value="{{ user.username }}">
+                <label>email</label>
+                <input  value="{{ user.email }}">
+            </div>
+            <div class="data">
+                <label>first name</label>
+                <input value="{{ user.name }}">
+                <label>last name</label>
+                <input value="{{ user.last_name }}">
+            </div>
+          </div>
+          <div class="btns">
+            <button type="submit">Save Changes</button>
+            <button>Reset Password</button>
+          </div>
+        </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

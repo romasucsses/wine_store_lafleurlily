@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,12 +24,11 @@
       <h4 class="price">${{ wine.price }}.00</h4>
       <p class="shiping">+ Free Shipping</p>
       
-      <form action="#" method="post">
+      <form action="{% url 'each_wine' wine.slug %}" method="post">
+        {% csrf_token %}
         <input id="quality" value="1" type="number">
 
-        <button class="btn1">
-          <a href="#">ADD TO CART</a>
-        </button>
+        <button type="submit" name="action" value="add_to_cart" class="btn1">ADD TO CART</button>
       </form>
       <p class="categ2">Category: Wine</p>
     </div>

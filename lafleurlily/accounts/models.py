@@ -38,6 +38,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=155, null=True)
     last_name = models.CharField(max_length=155, null=True)
     display_name = models.CharField(max_length=255, default=username)
+    orders = models.ForeignKey(Checkout, on_delete=models.PROTECT, null=True)
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -71,6 +72,7 @@ class ShippingAddress(models.Model):
     account = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
-class HistoryOrders(models.Model):
-    account = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
-    order = models.ForeignKey(Checkout, on_delete=models.PROTECT)
+
+# class HistoryOrders(models.Model):
+#     account = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
+#     order = models.ForeignKey(Checkout, on_delete=models.PROTECT, null=True)

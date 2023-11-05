@@ -68,6 +68,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'multiply_teg': 'orders.templatetags.multiply_teg',
+
+            },
         },
     },
 ]
@@ -86,6 +90,7 @@ DATABASES = {
             'PASSWORD': 'admin',
             'HOST': '127.0.0.1',
             'PORT': '3306',
+
         }
 }
 

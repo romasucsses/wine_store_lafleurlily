@@ -1,7 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
+
+from orders.models import Cart, CartItem
 from shop.models import *
 from mixins.subscribe_mixin import SubscribePost
+from django.contrib.sessions.models import Session
 
 
 class BaseFunctions(SubscribePost):
@@ -69,17 +72,44 @@ class ShopAllProducts(BaseFunctions, View):
     redirect_page = 'all_products'
 
 
-class Product(SubscribePost, View):
+class Product(View): #SubscribePost,
     template = 'shop/product.html'
     model = Wine
 
     def get(self, request, wine_slug):
-        product = get_object_or_404(self.model, slug= wine_slug)
+        product = get_object_or_404(self.model, slug=wine_slug)
         context = {'wine': product}
         return render(request, self.template, context=context)
 
-    def post(self, request):
-        pass
+    def post(self, request, wine_slug):
+        action = request.POST.get('action')
+        if action == 'add_to_cart':
+            return self.add_to_cart(request, wine_slug)
+
+    def add_to_cart(self, request, wine_slug):
+
+        if not request.user.is_authenticated:
+            if not request.session.session_key:
+                request.session.create()
+
+        else:
+            if not request.session.session_key:
+                request.session.create()
+
+        session_key = request.session.session_key
+
+        session = get_object_or_404(Session, session_key=session_key)
+        product = Wine.objects.get(slug=wine_slug)
+
+        cart, created = Cart.objects.get_or_create(session=session)
+        cart_item, item_created = CartItem.objects.get_or_create(cart_items=cart, product=product)
+
+        if cart_item:
+            cart_item.quantity += 1
+            cart_item.save()
+
+        return redirect('cart')
+
 
 
 class WineCategory(BaseFunctions, View):

@@ -1,3 +1,4 @@
+from django.contrib.sessions.models import Session
 from django.db import models
 from shop.models import Wine
 
@@ -9,21 +10,21 @@ class Coupons(models.Model):
 
 
 class Cart(models.Model):
-    product = models.ForeignKey(Wine, on_delete=models.PROTECT)
+    session = models.ForeignKey(Session, null=True, blank=True, on_delete=models.CASCADE)
+    items = models.ManyToManyField('CartItem', null=True, default=None)
     date_generation = models.DateField(auto_now=True)
 
-    def all_summ_of_cart(self):
-        wine = Wine.objects.all()
-        total_sum = 0
+    def __str__(self):
+        return str(self.date_generation)
 
-        if wine is not None:
-            for product in wine:
-                total_sum += product.price
 
-        return total_sum
+class CartItem(models.Model):
+    cart_items = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Wine, on_delete=models.PROTECT)
+    quantity = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.pk
+        return str(self.pk)
 
 
 class Checkout(models.Model):

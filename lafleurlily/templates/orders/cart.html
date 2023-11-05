@@ -1,0 +1,73 @@
+{% load static %}
+{% load multiply_teg %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'orders/styles/cart_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+{% if item %}
+    <div class="main-block">
+        <h1 class="cart-header">Cart</h1>
+        <table class="products-table">
+            <tr>
+                <th colspan="2"><a href="{% url 'all_products' %}"><button>Add Others Products</button></a></th>
+                
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            {% for each in item %}
+            <tr>
+                <td class="cancel-prod">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{ each.id }}">
+                        <button type="submit" name="action" value="delete-item">
+                            <img src="{% static 'orders/images/site-img/cancel-circle.svg' %}">
+                        </button>
+                    </form>
+                </td>
+                <td class="image-prod"><a href="#"><img src="{{ each.product.image.url }}"></a></td>
+                <td>{{ each.product.name }}</td>
+                <td>${{ each.product.price }}0</td>
+                <td><input type="number" value="{{ each.quantity }}"></td>
+                <td>${% multiply each.quantity each.product.price %}</td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
+
+        <div class="total">
+            <form class="coupons-add">
+                <div class="coupons">
+                    <input type="text" placeholder="Your coupon..">
+                    <button>Apply Coupon</button>
+                </div>
+            </form>
+            <table class="checkout-table">
+                <tr>
+                    <th colspan="2">Cart Totals</th>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>${{ item_total }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><a href="{% url 'pre_checkout' %}"><button>Checkout</button></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <h1 class="cart-header">Your Cart is Empty Now</h1>
+
+{% endif %}
+</body>
+</html>

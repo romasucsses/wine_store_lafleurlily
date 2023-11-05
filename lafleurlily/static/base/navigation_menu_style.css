@@ -1,23 +1,31 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
 /*editing navigation panel*/
 
-nav .menu{
+.navigation-menu nav .menu{
     display: flex;
     justify-content: space-between;
 }
 
-nav ul{
+.navigation-menu nav ul{
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav li{
+.navigation-menu nav li{
     margin-top: 35px;
     margin-right: 30px;
 }
 
-nav a{
+.navigation-menu nav a{
     color: #483e3e;
     text-decoration: none;
     font-size: 16px;
@@ -26,27 +34,26 @@ nav a{
 
 }
 
-nav a:hover {
+.navigation-menu nav a:hover {
     background-color: #483e3e; /* Цвет фона при наведении курсора */
     color: #FFFFFF;
     padding: 5px;
     border-radius: 8px;
 }
 
-nav .logo-img{
+.navigation-menu nav .logo-img{
     width: auto;
     height: 100px;
     margin-right: 20px;
 }
 
-.cart-acc-img{
+.navigation-menu .cart-acc-img{
     margin-top: 23px;
     margin-right: 60px;
 }
 
-.cart-acc-img img{
+.navigation-menu .cart-acc-img img{
     width: 30px;
     height: 30px;
     padding: 10px;
 }
-

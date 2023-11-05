@@ -1,0 +1,50 @@
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: #f5f7f9;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* editing main block */
+
+.main-block{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.guest button{
+    width: 290px;
+    height: 60px;
+    background-color: #007bff;
+    font-size: 20px;
+    color:#FFFFFF;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+.guest button:hover{
+    background-color: #0084d6;
+    width: 298px;
+    height: 65px;
+}
+
+
+.user button{
+    width: 290px;
+    height: 60px;
+    background-color: #0084d6;
+    font-size: 20px;
+    color:#FFFFFF;
+    border: 0;
+    border-radius: 8px;
+}
+
+.user button:hover{
+    background-color: #007bff;
+    width: 298px;
+    height: 65px;
+}

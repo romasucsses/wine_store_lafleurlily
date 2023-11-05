@@ -1,0 +1,102 @@
+/* editing main block */
+.greetings{
+    text-align: center;
+    font-size: 24px;
+    color: #483e3e;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.main-block{
+
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.left-menu li{
+    list-style: none;
+    width: 350px;
+    height: 45px;
+    border: solid 0.5px;
+    border-radius: 5px;
+    margin: 7px;
+
+}
+
+.left-menu li:hover{
+    width: 370px;
+    height: 55px;
+}
+
+.left-menu a{
+    display: block;
+    line-height: 1.8;
+    padding: 0.5em 1em;
+    font-size: 17px;
+    color:#333333;
+
+}
+
+.left-menu a:hover{
+    color:#0084d6;
+    font-size: 19px;
+}
+
+.right-info .fields{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.right-info .data{
+    margin: 15px;
+}
+
+.right-info form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.right-info label{
+    color: gray;
+}
+
+.right-info input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+}
+
+.right-info button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+
+
+}
+
+.right-info button:hover {
+    background-color: #0056b3;
+}
+
+.right-info .btns {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 140px;
+}
+
+.right-info .btns button {
+    margin-bottom: 10px;
+}

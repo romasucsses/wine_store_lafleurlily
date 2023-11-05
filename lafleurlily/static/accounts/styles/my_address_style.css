@@ -1,0 +1,109 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+/* editing main block */
+.greetings{
+    text-align: center;
+    font-size: 24px; 
+    color: #483e3e; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+}
+.main-block{
+
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.left-menu li{
+    list-style: none;
+    width: 350px;
+    height: 45px;
+    border: solid 0.5px;
+    border-radius: 5px;
+    margin: 7px;  
+    
+}
+
+.left-menu li:hover{
+    width: 370px;
+    height: 55px;
+}
+
+.left-menu a{
+    display: block;
+    line-height: 1.8;
+    padding: 0.5em 1em;
+    font-size: 17px;
+    color:#333333;
+    
+}
+
+.left-menu a:hover{
+    color:#0084d6;
+    font-size: 19px;
+}
+
+.right-info{
+    width: 600px;
+    margin: 20px;
+    
+    
+}
+
+/* Styles for the .right-info container */
+.right-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Styles for the .billing and .shipping sections */
+  .billing, .shipping {
+    width: 50%; 
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin: 10px;
+   
+  }
+  
+  
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 30px;
+    background-color: #f5f3f3;
+  }
+  
+  .head h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .head a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+  }
+
+  .body {
+    margin: 10px;
+    padding: 10px
+ }
+  
+  .body p {
+    
+    font-size: 16px;
+  }
+  
+
