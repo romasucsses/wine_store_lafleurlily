@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'pages.apps.PagesConfig',
     'shop.apps.ShopConfig',
-    'accounts.apps.AccountsConfig'
+    'accounts.apps.AccountsConfig',
+    'stripe_api.apps.StripePayConfig'
+
 ]
 
 MIDDLEWARE = [

@@ -34,7 +34,7 @@ a{
 
 }
 
-.navigation-menu nav a:hover {
+.navigation-menu li a:hover {
     background-color: #483e3e; /* Цвет фона при наведении курсора */
     color: #FFFFFF;
     padding: 5px;
@@ -56,4 +56,9 @@ a{
     width: 30px;
     height: 30px;
     padding: 10px;
+}
+
+.navigation-menu .cart-acc-img img:hover{
+    width: 35px;
+    height: 35px;
 }

@@ -40,7 +40,7 @@ class Checkout(models.Model):
     zip_code = models.CharField(max_length=155)
     phone = models.CharField(max_length=255)
     email = models.EmailField()
-    order_notes = models.TextField(default=None, null=True)
+    order_notes = models.TextField(null=True, blank=True)
 
     STATUS_LIST = (
         ('pending', 'Pending'),

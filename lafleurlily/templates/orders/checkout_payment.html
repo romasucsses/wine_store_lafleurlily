@@ -1,0 +1,51 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{% static 'orders/styles/checkout_payment_style.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+
+  </head>
+  <body>
+    {% include 'base/navigation_menu.html' %}
+
+    <h1 class="head-title">Checkout Payment</h1>
+
+    <div class="main-block">
+
+      <form method="post">
+        {% csrf_token %}
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" required />
+
+        <label for="expiration_date">Expiration Date:</label>
+        <input
+          type="text"
+          id="expiration_date"
+          name="expiration_date"
+          placeholder="month/year"
+          required
+        />
+
+        <label for="cvc">CVC:</label>
+        <input type="text" id="cvc" name="cvc" required />
+
+        <label for="cardholder_name">Cardholder Name:</label>
+        <input
+          type="text"
+          id="cardholder_name"
+          name="cardholder_name"
+          required
+        />
+
+        <div class="btn-pay">
+            <button type="submit">Pay Now</button>
+        </div>
+      </form>
+
+    </div>
+
+  </body>
+</html>

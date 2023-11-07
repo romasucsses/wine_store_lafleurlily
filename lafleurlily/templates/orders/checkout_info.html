@@ -1,0 +1,62 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Information</title>
+    <link rel="stylesheet" href="{% static 'orders/styles/checkout_info_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+
+
+    <h1 class="header-title">Checkout Information</h1>
+    
+
+    <div class="main-block">
+        {{ form.non_field_errors }}
+        <form method="post">
+            {% csrf_token %}
+        
+            <div class="client-info">
+                <div class="part1-of">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required />
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required />
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" id="company_name" name="company_name" placeholder="Optional"/>
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required />
+                    <label for="street_address_1">Street Address 1:</label>
+                    <textarea id="street_address_1" name="street_address_1" required></textarea>
+                    <label for="street_address_2">Street Address 2:</label>
+                    <textarea id="street_address_2" name="street_address_2" placeholder="Optional"></textarea>
+                </div>
+                <div class="part2-of">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required />
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required />
+                    <label for="zip_code">Zip Code:</label>
+                    <input type="text" id="zip_code" name="zip_code" required />
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required />
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                    <label for="order_notes">Order Notes:</label>
+                    <textarea id="order_notes" name="order_notes" placeholder="Optional"></textarea>
+                </div>
+            </div>
+        
+            <div class="paywith">
+                <p class="p-pay-with">Pay with: </p>
+                <button type="submit" name="action" value="pay-with-card" class="btn-pay-card">Debit or Credit Card</button>
+                <button type="submit" name="action" value="pay-with-paypal" class="btn-pay-paypal"><span class="p-pay">Pay</span><span class="p-pal">Pal</span></button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
