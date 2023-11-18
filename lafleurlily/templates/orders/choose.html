@@ -12,12 +12,12 @@
 
     <div class="main-block">
         <div class="guest">
-            <a href="{% url 'checkout_info' %}">
+            <a href="{% url 'checkout_as_guest' %}">
                 <button>Continue As Guest</button>
             </a>
         </div>
         <div class="user">
-            <a href="#">
+            <a href="{% url 'login' %}?redirect_url={% url 'all_products' %}">
                 <button>Continue with Login</button>
             </a>
         </div>

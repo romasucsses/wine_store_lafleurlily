@@ -25,29 +25,29 @@
 
         <div class="billing">
           <div class="head">
-            <h3>Billing address</h3>
-            <a href="#">Edit</a>
+            <h3>Shipping address</h3>
+            <a href="{% url 'edit_address' %}">Edit</a>
           </div>
           <div class="body">
-            <p>Riki Rilgi</p>
-            <p>str Cuza-Voda 23</p>
-            <p>Chisinau</p>
-            <p>Chișinău 2010 </p>
-            <p>Moldova</p>
+          {% if user.user_shipping_address %}
+            <p>{{ user.user_shipping_address.first_name }} {{ user.user_shipping_address.last_name }}</p>
+            <p>{{ user.user_shipping_address.street_address_1 }}</p>
+            <p>{{ user.user_shipping_address.city }}</p>
+            <p>{{ user.user_shipping_address.phone }} </p>
+            <p>{{ user.user_shipping_address.country }}</p>
+
+          {% else %}
+            <p>Yor Don't Have Yet</p>
+          {% endif %}
           </div>
 
         </div>
 
-        <div class="shipping">
-          <div class="head">
-            <h3>Shipping address</h3>
-            <a href="#">Add</a>
-          </div>
-          <div class="body">
-            <p>You have not set up this type of address yet.</p>
-            
-          </div>
-
+        <div class="add-address">
+          <h3>Add new address</h3>
+          <a href="{% url 'add_new_address' %}">
+            <img src="{% static 'orders/images/cheackout_image_paywith/adding-image.png' %}">
+          </a>
         </div>
 
       </div>

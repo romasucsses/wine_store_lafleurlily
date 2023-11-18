@@ -1,5 +1,7 @@
 from django.contrib.sessions.models import Session
 from django.db import models
+
+from accounts.models import User
 from shop.models import Wine
 
 
@@ -27,8 +29,9 @@ class CartItem(models.Model):
         return str(self.pk)
 
 
-class Checkout(models.Model):
-    cart_information = models.OneToOneField(Cart, on_delete=models.PROTECT)
+class CheckoutAddress(models.Model):
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.PROTECT, related_name='+')
+    session_guest = models.OneToOneField(Session, null=True, blank=True, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=155)
     last_name = models.CharField(max_length=255)
     company_name = models.CharField(max_length=255, null=True)
@@ -40,7 +43,10 @@ class Checkout(models.Model):
     zip_code = models.CharField(max_length=155)
     phone = models.CharField(max_length=255)
     email = models.EmailField()
-    order_notes = models.TextField(null=True, blank=True)
+
+
+class OrderInformation(models.Model):
+    date = models.DateTimeField(auto_now=True)
 
     STATUS_LIST = (
         ('pending', 'Pending'),
@@ -50,5 +56,12 @@ class Checkout(models.Model):
     )
 
     status = models.CharField(max_length=255, choices=STATUS_LIST, default=STATUS_LIST[0][0])
+    cart_data = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    address_data = models.ForeignKey(CheckoutAddress, on_delete=models.CASCADE)
+    payment_is = models.BooleanField(default=False)
+    user = models.ForeignKey('accounts.User', on_delete=models.PROTECT, null=True)
+    payment_method = models.CharField(max_length=255, default=None)
 
+    def __str__(self):
+        return f'Order Nr.{self.pk}'
 

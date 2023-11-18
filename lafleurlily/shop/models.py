@@ -5,9 +5,10 @@ from django.utils.text import slugify
 
 class Reviews(models.Model):
     name = models.CharField(max_length=55)
-    stars_count = models.IntegerField()
+    stars_count = models.IntegerField(null=True)
     review = models.TextField()
-    product = models.OneToOneField('shop.Wine', on_delete=models.PROTECT, default= None)
+    product = models.ForeignKey('shop.Wine', on_delete=models.PROTECT, default=None)
+    date = models.DateField(auto_now=True)
 
 
 class ProductCategory(models.Model):

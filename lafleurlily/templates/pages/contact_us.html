@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -57,12 +57,13 @@
       </div>
 
       <div class="right-block">
-        <form>
-            <input placeholder="NAME">
-            <input placeholder="SUBJECT">
-            <input  placeholder="EMAIL">
-            <input id='msg-input' placeholder="MESSAGE">
-            <button>SEND MESSAGE</button>
+        <form method="post">
+            {% csrf_token %}
+            <input name="name" placeholder="NAME">
+            <input name="subject" placeholder="SUBJECT">
+            <input name="email"  placeholder="EMAIL">
+            <input name="message" id='msg-input' placeholder="MESSAGE">
+            <button  type="submit" name="action" value="send-msg">SEND MESSAGE</button>
         </form>
       </div>
 

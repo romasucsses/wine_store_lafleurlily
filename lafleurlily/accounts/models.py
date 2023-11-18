@@ -1,8 +1,6 @@
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.db import models
 from django.utils import timezone
-
-from orders.models import Checkout
 from django.contrib.auth.models import BaseUserManager, PermissionsMixin
 
 
@@ -38,7 +36,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=155, null=True)
     last_name = models.CharField(max_length=155, null=True)
     display_name = models.CharField(max_length=255, default=username)
-    orders = models.ForeignKey(Checkout, on_delete=models.PROTECT, null=True)
+
+    user_shipping_address = models.ForeignKey(
+        'orders.CheckoutAddress', on_delete=models.CASCADE,
+        null=True, related_name='+'
+    )
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -56,23 +58,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-
-class ShippingAddress(models.Model):
-    first_name = models.CharField(max_length=155)
-    last_name = models.CharField(max_length=255)
-    company_name = models.CharField(max_length=255, null=True)
-    country = models.CharField(max_length=255)
-    street_address_1 = models.TextField()
-    street_address_2 = models.TextField(null=True)
-    city = models.CharField(max_length=155)
-    state = models.CharField(max_length=155)
-    zip_code = models.CharField(max_length=155)
-    phone = models.CharField(max_length=255)
-    email = models.EmailField()
-    account = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-
-
-
-# class HistoryOrders(models.Model):
-#     account = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
-#     order = models.ForeignKey(Checkout, on_delete=models.PROTECT, null=True)

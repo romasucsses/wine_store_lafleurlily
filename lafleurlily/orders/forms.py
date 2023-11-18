@@ -1,10 +1,10 @@
 from django import forms
-from orders.models import Checkout
+from orders.models import CheckoutAddress
 
 
 class CheckoutInfoForm(forms.ModelForm):
     class Meta:
-        model = Checkout
+        model = CheckoutAddress
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
@@ -13,6 +13,5 @@ class CheckoutInfoForm(forms.ModelForm):
         # Make specific fields optional by setting required to False
         self.fields['company_name'].required = False
         self.fields['street_address_2'].required = False
-        self.fields['status'].required = False
-        self.fields['cart_information'].required = False
+
 

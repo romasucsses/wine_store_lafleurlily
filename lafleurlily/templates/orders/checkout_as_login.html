@@ -1,0 +1,62 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{% static 'orders/styles/checkout_as_login_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+
+    <h1 class="header-title">Checkout Information</h1>
+    
+
+    <div class="main-block">
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="address">
+                <div class="use-my_address">
+                    <div class="shipping">
+                        <div class="head">
+                            <h3>Shipping address</h3>
+                            <a href="{% url 'edit_address' %}">Edit</a>
+
+                        </div>
+                        <div class="body">
+                        {% if user.user_shipping_address %}
+                            <p>{{ user.user_shipping_address.first_name }} {{ user.user_shipping_address.last_name }}</p>
+                            <p>{{ user.user_shipping_address.street_address_1 }}</p>
+                            <p>{{ user.user_shipping_address.city }}</p>
+                            <p>{{ user.user_shipping_address.phone }} </p>
+                            <p>{{ user.user_shipping_address.country }}</p>
+
+
+                        {% else %}
+                            <p>Yor Don't Have Yet</p>
+                        {% endif %}
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="add-address">
+                    <h3>Add new address</h3>
+                    <a href="{% url 'add_new_address' %}">
+                        <img src="{% static 'orders/images/cheackout_image_paywith/adding-image.png' %}">
+                    </a>
+                </div>
+            </div>
+        
+            <div class="paywith">
+                <p class="p-pay-with">Pay with: </p>
+                <button type="submit" name="action" value="pay-with-card" class="btn-pay-card">Debit or Credit Card</button>
+                <button type="submit" name="action" value="pay-with-paypal" class="btn-pay-paypal"><span class="p-pay">Pay</span><span class="p-pal">Pal</span></button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

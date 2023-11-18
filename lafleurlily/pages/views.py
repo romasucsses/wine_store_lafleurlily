@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views import View
+
+from pages.forms import SendMSGForm
 from shop.models import *
 from pages.models import *
 
@@ -63,6 +65,19 @@ class ContactUs(SubscribePost, View):
 
     def get(self, request):
         return render(request, self.template)
+
+    def post(self, request):
+        action = request.POST.get('action')
+        if action == "send-msg":
+            return self.send_msg(request)
+
+    def send_msg(self, request):
+        form = SendMSGForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+        return self.get(request)
+
 
 
 

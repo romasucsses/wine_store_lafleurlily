@@ -1,0 +1,55 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Address</title>
+    <link rel="stylesheet" href="{% static 'accounts/styles/edit_shipping_address_style.css' %}">
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}"/>
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+
+    <h1 class="header-title">View and Edit your Address</h1>
+
+
+    <div class="main-block">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="client-info">
+                <div class="part1-of">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required value="{{ user.user_shipping_address.first_name }}"/>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required value="{{ user.user_shipping_address.last_name }}"/>
+                    <label for="company_name">Company Name:</label>
+                    <input type="text" id="company_name" name="company_name" value="{{ user.user_shipping_address.company_name }}"/>
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required value="{{ user.user_shipping_address.country }}"/>
+                    <label for="street_address_1">Street Address 1:</label>
+                    <textarea id="street_address_1" name="street_address_1" required >{{ user.user_shipping_address.street_address_1 }}</textarea>
+                    <label for="street_address_2">Street Address 2:</label>
+                    <textarea id="street_address_2" name="street_address_2" >{{ user.user_shipping_address.street_address_2 }}</textarea>
+                </div>
+                <div class="part2-of">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required value="{{ user.user_shipping_address.city }}"/>
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required value="{{ user.user_shipping_address.state }}"/>
+                    <label for="zip_code">Zip Code:</label>
+                    <input type="text" id="zip_code" name="zip_code" required value="{{ user.user_shipping_address.zip_code }}"/>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required value="{{ user.user_shipping_address.phone }}"/>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required value="{{ user.user_shipping_address.email }}"/>
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn-add-address">Save Changes</button>
+
+        </form>
+    </div>
+</body>
+</html>

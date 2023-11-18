@@ -26,8 +26,7 @@
     </div>
         
     <div class="right-info">
-
-        
+    {% if orders %}
         <table>
             <tr>
               <th>Order</th>	
@@ -37,22 +36,21 @@
               <th>Actions</th>
             </tr>
 
+        {% for order, total in orders_with_totals %}
             <tr>
-              <td>#5013</td>
-              <td>October 26, 2023</td>
-              <td>Processing</td>
-              <td>$43.00 for 2 items</td>
-              <td><a href="#"><button>View</button></a></td>
+              <td>#{{ order.pk }}</td>
+              <td>{{ order.date }}</td>
+              <td>{{ order.status }}</td>
+              <td>${{ total }}</td>
+              <td><a href="{% url 'view_order' pk=order.pk %}"><button>View</button></a></td>
             </tr>
+        {% endfor %}
 
-            <tr>
-              <td>#5014</td>
-              <td>October 27, 2023</td>
-              <td>Processing</td>
-              <td>$50.00 for 3 items</td>
-              <td><a href="#"><button>View</button></a></td>
-            </tr>
+
         </table>
+    {% else %}
+        <h2>You don't have orders yet</h2>
+    {% endif %}
     </div>
 
   </div>

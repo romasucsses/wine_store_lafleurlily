@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 
 from orders.models import Cart, CartItem
+from shop.forms import AddReviewForm
 from shop.models import *
 from mixins.subscribe_mixin import SubscribePost
 from django.contrib.sessions.models import Session
@@ -78,13 +79,29 @@ class Product(View): #SubscribePost,
 
     def get(self, request, wine_slug):
         product = get_object_or_404(self.model, slug=wine_slug)
-        context = {'wine': product}
+        reviews = Reviews.objects.filter(product=product)
+        all_products = Wine.objects.all()
+        context = {'wine': product, 'reviews': reviews, 'all_reviews': reviews.count(), 'all_products': all_products[:3]}
+
         return render(request, self.template, context=context)
 
     def post(self, request, wine_slug):
         action = request.POST.get('action')
         if action == 'add_to_cart':
             return self.add_to_cart(request, wine_slug)
+        elif action == 'add-review':
+            return self.add_review(request, wine_slug)
+
+    def add_review(self, request, wine_slug):
+        form = AddReviewForm(request.POST)
+        product = get_object_or_404(self.model, slug=wine_slug)
+
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.save()
+
+        return self.get(request, wine_slug=wine_slug)
 
     def add_to_cart(self, request, wine_slug):
 

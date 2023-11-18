@@ -10,10 +10,10 @@ YOUR_DOMAIN = 'http://127.0.0.1:8000'
 
 class CreateCheckoutSessionView(View):
     def post(self, request, *args, **kwargs):
-        checkout_id = self.kwargs['pk']
-        checkout_obj = Checkout.objects.get(pk=checkout_id)
+        order_id = self.kwargs['pk']
+        order_obj = OrderInformation.objects.get(pk=order_id)
 
-        items = CartItem.objects.filter(cart_items=checkout_obj.cart_information)
+        items = CartItem.objects.filter(cart_items=order_obj.cart_information)
 
         def item_total():
             summ = 0

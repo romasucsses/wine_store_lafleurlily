@@ -5,6 +5,6 @@ from orders.views import *
 urlpatterns = [
     path('cart/', CartPage.as_view(), name='cart'),
     path('pre-checkout/', PreCheckoutPage.as_view(), name='pre_checkout'),
-    path('checkout-info/', CheckoutInfo.as_view(), name='checkout_info'),
-    path('checkout-payment/', CheckoutPayment.as_view(), name='checkout_payment')
+    path('checkout-as-guest/', CheckoutAsGuest.as_view(), name='checkout_as_guest'),
+    path('checkout-as-user/', CheckoutAsUser.as_view(), name='checkout_as_user')
 ]

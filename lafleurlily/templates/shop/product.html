@@ -18,10 +18,10 @@
     <div class="product">
       <img src="{{ wine.image.url }}" class="prod-img" />
 
-      <p class="situated">Home / {{ wine.category }} / {{ wine.name }}</p>
+      <p class="situated">Home/{{ wine.category }}/{{ wine.name }}</p>
       <p class="categ1">{{ wine.category }}</p>
       <h2 class="name">{{ wine.name }}</h2>
-      <h4 class="price">${{ wine.price }}.00</h4>
+      <h4 class="price">${{ wine.price }}0</h4>
       <p class="shiping">+ Free Shipping</p>
       
       <form action="{% url 'each_wine' wine.slug %}" method="post">
@@ -32,20 +32,20 @@
       </form>
       <p class="categ2">Category: Wine</p>
     </div>
-    <hr>
+
     <div class="two-block">
       <div class="reviews">
-        <p class="reviws">Reviews (4)</p>
+        <p class="reviws">Reviews ({{ all_reviews }})</p>
         <div class="all-reviews">
 
-        {% for numbs in '123' %}
+        {% for review in reviews %}
           <div class="each-review">
             <img src="{% static 'shop/images/site-img/avatar-review.png' %}">
             <div class="right-colum">
-              <p>Riki Morty</p>
-              <p>15.05.2023</p>
+              <p>{{ review.name }}</p>
+              <p>{{ review.date }}</p>
               <p>
-                It's so cute product. I realy liked it and recommended
+                {{ review.review }}
               </p>
             </div>
           </div>
@@ -55,10 +55,11 @@
 
         <div class="write-review">
           <p>Add a review to La Fleur Lily</p>
-          <form action="#" method="post" id="review-from">
-            <input id="name-review" type="text" placeholder="Write your name">
-            <input id="review-review" type="text" placeholder="Write your Review">
-            <button type="submit" id="submit-review">Submit my review</button>
+          <form method="post" id="review-from">
+            {% csrf_token %}
+            <input id="name" name="name" type="text" placeholder="Write your name">
+            <input id="review" name="review" type="text" placeholder="Write your Review">
+            <button type="submit" id="submit-review" name="action" value="add-review">Submit my review</button>
           </form>
         </div>
       </div>
@@ -67,15 +68,15 @@
 
       <div class="proucts-shop">
         
-      {% for numb in '123' %}
+      {% for wine in all_products %}
         <div class="product-card">
-            <a href="#">
-                <img src="{% static 'shop/images/products-img/2.png' %}" alt="Wait please" />
+            <a href="{% url 'each_wine' wine_slug=wine.slug %}">
+                <img src="{{ wine.image.url }}" alt="Wait please" />
               </a>
               <div class="info-product-shop">
-                <h2 class="product-name">La Fleur Lily semi-sweet white</h2>
-                <p class="product-category">Wine</p>
-                <p class="product-price">$15.00</p>
+                <h2 class="product-name">{{ wine.name }}</h2>
+                <p class="product-category">{{ wine.category }}</p>
+                <p class="product-price">${{ wine.price }}0</p>
                 <div class="review">
                   <p>stars</p>
                   <div class="stars-img">

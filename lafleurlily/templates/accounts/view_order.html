@@ -1,0 +1,76 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Order</title>
+    <link rel="stylesheet" href="{% static 'accounts/styles/view_order_style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'base/navigation_menu_style.css' %}">
+</head>
+<body>
+    {% include 'base/navigation_menu.html' %}
+     
+    
+      <div class="main-block">
+            
+        <div class="left-menu">
+          <nav>
+            <ul>
+                <li><a href="{% url 'my_account' %}">Account details</a></li>
+                <li><a href="{% url 'account_orders' %}">My Orders</a></li>
+                <li><a href="{% url 'account_address' %}">My Addresses</a></li>
+                <li><a href="{% url 'logout' %}">LogOut</a></li>
+            </ul>
+          </nav>
+    
+        </div>
+            
+        <div class="right-info">
+    
+            <h3>Order Nr. #{{ order.pk }} Information</h3>
+            <table class="data-table">
+
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                {% for each in items %}
+                    <tr>
+                        <td><a href="{% url 'each_wine' wine_slug=each.product.slug %}">{{ each.product }}</a></td>
+                        <td><span>${{ each.product.price }} x {{ each.quantity }}</span></td>
+                    </tr>
+                {% endfor %}
+        
+                </tbody>
+        
+                <tfoot>
+
+                    <tr>
+                        <th scope="row">Payment method:</th>
+                        <td>{{ order.payment_method }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Date:</th>
+                        <td><span>{{ order.date }}</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Total:</th>
+                        <td><span>${{ item_total }}</span></td>
+                    </tr>
+
+                </tfoot>
+
+            </table>
+
+        </div>
+    
+      </div>
+    
+</body>
+</html>

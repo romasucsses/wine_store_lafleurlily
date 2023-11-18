@@ -1,15 +1,11 @@
 from twilio.rest import Client
-from config import*
+from twilio_api.config import*
 
 
-class SenderMsgToPhone:
-    Number = None
-    Message = None
+def send_message(number, message):
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
-
-    def send_messages(self, number, message):
-        self.client.messages.create(
-            body=self.Message,
-            from_='+13203773702',
-            to='+' + self.Number
-        )
+    client.messages.create(
+        body=message,
+        from_='+13203773702',
+        to='+' + number
+    )

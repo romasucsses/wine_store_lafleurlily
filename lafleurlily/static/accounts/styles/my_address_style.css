@@ -64,7 +64,7 @@ a{
 /* Styles for the .right-info container */
 .right-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
   
   /* Styles for the .billing and .shipping sections */
@@ -98,12 +98,35 @@ a{
 
   .body {
     margin: 10px;
-    padding: 10px
+    padding: 20px
  }
   
   .body p {
     
     font-size: 16px;
   }
-  
+
+.add-address {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.add-address img{
+    width: 50px;
+    height: auto;
+
+}
+
+.add-address img:hover{
+    width: 55px;
+}
+
+.add-address h3{
+    font-weight: 700;
+    color: #54595f;
+    font-size: 20px;
+    text-align: center;
+}
 
